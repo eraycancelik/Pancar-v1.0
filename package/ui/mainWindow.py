@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'main.ui'
+# Form implementation generated from reading ui file 'test.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -14,7 +14,7 @@ class Ui_VehicleDynamicsApp(object):
     def setupUi(self, VehicleDynamicsApp):
         VehicleDynamicsApp.setObjectName("VehicleDynamicsApp")
         VehicleDynamicsApp.setEnabled(True)
-        VehicleDynamicsApp.resize(923, 623)
+        VehicleDynamicsApp.resize(890, 623)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum
         )
@@ -24,8 +24,8 @@ class Ui_VehicleDynamicsApp(object):
             VehicleDynamicsApp.sizePolicy().hasHeightForWidth()
         )
         VehicleDynamicsApp.setSizePolicy(sizePolicy)
-        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(923, 623))
-        VehicleDynamicsApp.setMaximumSize(QtCore.QSize(923, 623))
+        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(890, 617))
+        VehicleDynamicsApp.setMaximumSize(QtCore.QSize(890, 623))
         font = QtGui.QFont()
         font.setFamily("Bahnschrift SemiLight")
         font.setPointSize(9)
@@ -51,232 +51,262 @@ class Ui_VehicleDynamicsApp(object):
         )
         VehicleDynamicsApp.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=VehicleDynamicsApp)
-        self.centralwidget.setMinimumSize(QtCore.QSize(923, 546))
-        self.centralwidget.setMaximumSize(QtCore.QSize(923, 609))
+        self.centralwidget.setMinimumSize(QtCore.QSize(890, 546))
+        self.centralwidget.setMaximumSize(QtCore.QSize(890, 609))
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame_2.setMaximumSize(QtCore.QSize(16777215, 609))
-        self.frame_2.setStyleSheet("background-color: rgb(5,5,5);")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.frame_2)
-        self.horizontalLayout_19.setContentsMargins(6, -1, 0, 8)
-        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
-        self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
-        self.car = QtWidgets.QFrame(parent=self.frame_2)
-        self.car.setStyleSheet(
-            'font: 900 8pt "Segoe UI";\n' "background-color: rgb(15,15,15);"
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.frame = QtWidgets.QFrame(parent=self.centralwidget)
+        self.frame.setMaximumSize(QtCore.QSize(890, 16777215))
+        self.frame.setStyleSheet("background-color: rgb(5,5,5);")
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_2.setContentsMargins(4, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(4)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.left_side = QtWidgets.QFrame(parent=self.frame)
+        self.left_side.setMinimumSize(QtCore.QSize(410, 542))
+        self.left_side.setMaximumSize(QtCore.QSize(410, 542))
+        self.left_side.setStyleSheet(
+            'font: 900 8pt "Segoe UI";\n' "background-color: rgb(25,25,25);"
         )
-        self.car.setObjectName("car")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.car)
+        self.left_side.setObjectName("left_side")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.left_side)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, -1)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.verticalLayout_34 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_34.setContentsMargins(4, -1, -1, -1)
+        self.left_side_holder = QtWidgets.QFrame(parent=self.left_side)
+        self.left_side_holder.setObjectName("left_side_holder")
+        self.verticalLayout_34 = QtWidgets.QVBoxLayout(self.left_side_holder)
+        self.verticalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_34.setSpacing(10)
         self.verticalLayout_34.setObjectName("verticalLayout_34")
-        self.label_28 = QtWidgets.QLabel(parent=self.car)
-        self.label_28.setMinimumSize(QtCore.QSize(411, 301))
-        self.label_28.setMaximumSize(QtCore.QSize(411, 301))
-        self.label_28.setAutoFillBackground(False)
-        self.label_28.setText("")
-        self.label_28.setPixmap(
+        self.pancar_image = QtWidgets.QLabel(parent=self.left_side_holder)
+        self.pancar_image.setMinimumSize(QtCore.QSize(411, 301))
+        self.pancar_image.setMaximumSize(QtCore.QSize(411, 301))
+        self.pancar_image.setAutoFillBackground(False)
+        self.pancar_image.setStyleSheet(
+            "border:3px solid rgba(50,50,50,.2); margin:5px;"
+        )
+        self.pancar_image.setText("")
+        self.pancar_image.setPixmap(
             QtGui.QPixmap(":/img/icons/dark-car-from-side-vector-9761198.jpg")
         )
-        self.label_28.setScaledContents(True)
-        self.label_28.setWordWrap(False)
-        self.label_28.setOpenExternalLinks(False)
-        self.label_28.setObjectName("label_28")
-        self.verticalLayout_34.addWidget(self.label_28)
-        self.widget_10 = QtWidgets.QWidget(parent=self.car)
-        self.widget_10.setMinimumSize(QtCore.QSize(371, 161))
-        self.widget_10.setMaximumSize(QtCore.QSize(123213, 213123))
-        self.widget_10.setObjectName("widget_10")
-        self.verticalLayout_35 = QtWidgets.QVBoxLayout(self.widget_10)
+        self.pancar_image.setScaledContents(True)
+        self.pancar_image.setWordWrap(False)
+        self.pancar_image.setOpenExternalLinks(False)
+        self.pancar_image.setObjectName("pancar_image")
+        self.verticalLayout_34.addWidget(self.pancar_image)
+        self.info_input_area = QtWidgets.QWidget(parent=self.left_side_holder)
+        self.info_input_area.setMinimumSize(QtCore.QSize(371, 161))
+        self.info_input_area.setMaximumSize(QtCore.QSize(123213, 213123))
+        self.info_input_area.setStyleSheet("")
+        self.info_input_area.setObjectName("info_input_area")
+        self.verticalLayout_35 = QtWidgets.QVBoxLayout(self.info_input_area)
+        self.verticalLayout_35.setContentsMargins(-1, 0, -1, 0)
+        self.verticalLayout_35.setSpacing(20)
         self.verticalLayout_35.setObjectName("verticalLayout_35")
-        self.label_29 = QtWidgets.QLabel(parent=self.widget_10)
-        self.label_29.setMinimumSize(QtCore.QSize(0, 1))
-        self.label_29.setMaximumSize(QtCore.QSize(16777215, 1))
-        self.label_29.setStyleSheet("background-color: rgb(170, 0, 0);")
-        self.label_29.setText("")
-        self.label_29.setObjectName("label_29")
-        self.verticalLayout_35.addWidget(self.label_29)
-        self.groupBox_10 = QtWidgets.QGroupBox(parent=self.widget_10)
+        self.left_seperator = QtWidgets.QLabel(parent=self.info_input_area)
+        self.left_seperator.setMinimumSize(QtCore.QSize(0, 1))
+        self.left_seperator.setMaximumSize(QtCore.QSize(16777215, 1))
+        self.left_seperator.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.left_seperator.setText("")
+        self.left_seperator.setObjectName("left_seperator")
+        self.verticalLayout_35.addWidget(self.left_seperator)
+        self.vehicle_info = QtWidgets.QGroupBox(parent=self.info_input_area)
+        self.vehicle_info.setMinimumSize(QtCore.QSize(0, 110))
+        self.vehicle_info.setMaximumSize(QtCore.QSize(16777215, 110))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(8)
         font.setBold(True)
         font.setItalic(False)
-        self.groupBox_10.setFont(font)
-        self.groupBox_10.setStyleSheet(
+        self.vehicle_info.setFont(font)
+        self.vehicle_info.setStyleSheet(
             "color:rgb(255, 255, 255);\n" 'font: 700 8pt "Segoe UI";'
         )
-        self.groupBox_10.setObjectName("groupBox_10")
-        self.verticalLayout_36 = QtWidgets.QVBoxLayout(self.groupBox_10)
+        self.vehicle_info.setObjectName("vehicle_info")
+        self.verticalLayout_36 = QtWidgets.QVBoxLayout(self.vehicle_info)
+        self.verticalLayout_36.setSpacing(6)
         self.verticalLayout_36.setObjectName("verticalLayout_36")
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
-        self.widget_11 = QtWidgets.QWidget(parent=self.groupBox_10)
-        self.widget_11.setStyleSheet('font: 12px "Small Fonts";')
-        self.widget_11.setObjectName("widget_11")
-        self.verticalLayout_37 = QtWidgets.QVBoxLayout(self.widget_11)
+        self.vehicle_info_holder = QtWidgets.QHBoxLayout()
+        self.vehicle_info_holder.setObjectName("vehicle_info_holder")
+        self.vehicle_info_label_area = QtWidgets.QWidget(parent=self.vehicle_info)
+        self.vehicle_info_label_area.setStyleSheet('font: 12px "Small Fonts";')
+        self.vehicle_info_label_area.setObjectName("vehicle_info_label_area")
+        self.verticalLayout_37 = QtWidgets.QVBoxLayout(self.vehicle_info_label_area)
+        self.verticalLayout_37.setSpacing(10)
         self.verticalLayout_37.setObjectName("verticalLayout_37")
-        self.label_30 = QtWidgets.QLabel(parent=self.widget_11)
-        self.label_30.setObjectName("label_30")
-        self.verticalLayout_37.addWidget(self.label_30)
-        self.label_31 = QtWidgets.QLabel(parent=self.widget_11)
-        self.label_31.setObjectName("label_31")
-        self.verticalLayout_37.addWidget(self.label_31)
-        self.horizontalLayout_17.addWidget(self.widget_11)
-        self.verticalLayout_38 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_38.setObjectName("verticalLayout_38")
-        self.user_info_13 = QtWidgets.QLineEdit(parent=self.groupBox_10)
+        self.car_model_label = QtWidgets.QLabel(parent=self.vehicle_info_label_area)
+        self.car_model_label.setObjectName("car_model_label")
+        self.verticalLayout_37.addWidget(self.car_model_label)
+        self.engine_model_label = QtWidgets.QLabel(parent=self.vehicle_info_label_area)
+        self.engine_model_label.setObjectName("engine_model_label")
+        self.verticalLayout_37.addWidget(self.engine_model_label)
+        self.vehicle_info_holder.addWidget(self.vehicle_info_label_area)
+        self.vehicle_info_input_area = QtWidgets.QVBoxLayout()
+        self.vehicle_info_input_area.setSpacing(10)
+        self.vehicle_info_input_area.setObjectName("vehicle_info_input_area")
+        self.car_model = QtWidgets.QLineEdit(parent=self.vehicle_info)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.user_info_13.sizePolicy().hasHeightForWidth())
-        self.user_info_13.setSizePolicy(sizePolicy)
-        self.user_info_13.setMinimumSize(QtCore.QSize(200, 20))
-        self.user_info_13.setMaximumSize(QtCore.QSize(200, 20))
-        self.user_info_13.setStyleSheet(
+        sizePolicy.setHeightForWidth(self.car_model.sizePolicy().hasHeightForWidth())
+        self.car_model.setSizePolicy(sizePolicy)
+        self.car_model.setMinimumSize(QtCore.QSize(200, 20))
+        self.car_model.setMaximumSize(QtCore.QSize(200, 20))
+        self.car_model.setStyleSheet(
             "color:rgb(0,0,0);\n" "background-color: rgb(168, 168, 168);"
         )
-        self.user_info_13.setObjectName("user_info_13")
-        self.verticalLayout_38.addWidget(self.user_info_13)
-        self.user_info_14 = QtWidgets.QLineEdit(parent=self.groupBox_10)
+        self.car_model.setObjectName("car_model")
+        self.vehicle_info_input_area.addWidget(self.car_model)
+        self.engine_model = QtWidgets.QLineEdit(parent=self.vehicle_info)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.user_info_14.sizePolicy().hasHeightForWidth())
-        self.user_info_14.setSizePolicy(sizePolicy)
-        self.user_info_14.setMinimumSize(QtCore.QSize(200, 20))
-        self.user_info_14.setMaximumSize(QtCore.QSize(200, 20))
-        self.user_info_14.setStyleSheet(
+        sizePolicy.setHeightForWidth(self.engine_model.sizePolicy().hasHeightForWidth())
+        self.engine_model.setSizePolicy(sizePolicy)
+        self.engine_model.setMinimumSize(QtCore.QSize(200, 20))
+        self.engine_model.setMaximumSize(QtCore.QSize(200, 20))
+        self.engine_model.setStyleSheet(
             "color:rgb(0,0,0);\n" "background-color: rgb(168, 168, 168);"
         )
-        self.user_info_14.setObjectName("user_info_14")
-        self.verticalLayout_38.addWidget(self.user_info_14)
-        self.horizontalLayout_17.addLayout(self.verticalLayout_38)
-        self.verticalLayout_36.addLayout(self.horizontalLayout_17)
-        self.verticalLayout_35.addWidget(self.groupBox_10)
-        self.groupBox_11 = QtWidgets.QGroupBox(parent=self.widget_10)
-        self.groupBox_11.setStyleSheet(
+        self.engine_model.setObjectName("engine_model")
+        self.vehicle_info_input_area.addWidget(self.engine_model)
+        self.vehicle_info_holder.addLayout(self.vehicle_info_input_area)
+        self.verticalLayout_36.addLayout(self.vehicle_info_holder)
+        self.verticalLayout_35.addWidget(self.vehicle_info)
+        self.user_info = QtWidgets.QGroupBox(parent=self.info_input_area)
+        self.user_info.setMinimumSize(QtCore.QSize(0, 70))
+        self.user_info.setMaximumSize(QtCore.QSize(16777215, 70))
+        self.user_info.setStyleSheet(
             "color:rgb(255,255,255);\n" 'font: 700 8pt "Segoe UI";'
         )
-        self.groupBox_11.setObjectName("groupBox_11")
-        self.verticalLayout_39 = QtWidgets.QVBoxLayout(self.groupBox_11)
+        self.user_info.setObjectName("user_info")
+        self.verticalLayout_39 = QtWidgets.QVBoxLayout(self.user_info)
+        self.verticalLayout_39.setContentsMargins(-1, 9, -1, 9)
+        self.verticalLayout_39.setSpacing(6)
         self.verticalLayout_39.setObjectName("verticalLayout_39")
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.label_32 = QtWidgets.QLabel(parent=self.groupBox_11)
-        self.label_32.setStyleSheet('font: 9pt "Small Fonts";')
-        self.label_32.setObjectName("label_32")
-        self.horizontalLayout_18.addWidget(self.label_32)
-        self.user_info_15 = QtWidgets.QLineEdit(parent=self.groupBox_11)
+        self.user_info_holder = QtWidgets.QHBoxLayout()
+        self.user_info_holder.setObjectName("user_info_holder")
+        self.user_info_label_area = QtWidgets.QLabel(parent=self.user_info)
+        self.user_info_label_area.setStyleSheet('font: 9pt "Small Fonts";')
+        self.user_info_label_area.setObjectName("user_info_label_area")
+        self.user_info_holder.addWidget(self.user_info_label_area)
+        self.user_name = QtWidgets.QLineEdit(parent=self.user_info)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.user_info_15.sizePolicy().hasHeightForWidth())
-        self.user_info_15.setSizePolicy(sizePolicy)
-        self.user_info_15.setMinimumSize(QtCore.QSize(200, 20))
-        self.user_info_15.setMaximumSize(QtCore.QSize(200, 20))
-        self.user_info_15.setStyleSheet(
+        sizePolicy.setHeightForWidth(self.user_name.sizePolicy().hasHeightForWidth())
+        self.user_name.setSizePolicy(sizePolicy)
+        self.user_name.setMinimumSize(QtCore.QSize(200, 20))
+        self.user_name.setMaximumSize(QtCore.QSize(200, 20))
+        self.user_name.setStyleSheet(
             "color:rgb(0,0,0);\n" "background-color: rgb(168, 168, 168);"
         )
-        self.user_info_15.setObjectName("user_info_15")
-        self.horizontalLayout_18.addWidget(self.user_info_15)
-        self.verticalLayout_39.addLayout(self.horizontalLayout_18)
-        self.verticalLayout_35.addWidget(self.groupBox_11)
-        self.verticalLayout_34.addWidget(self.widget_10)
-        self.horizontalLayout.addLayout(self.verticalLayout_34)
-        self.horizontalLayout_20.addWidget(self.car)
-        self.frame = QtWidgets.QFrame(parent=self.frame_2)
-        self.frame.setMinimumSize(QtCore.QSize(473, 0))
-        self.frame.setMaximumSize(QtCore.QSize(473, 16777215))
-        self.frame.setStyleSheet("")
-        self.frame.setObjectName("frame")
-        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.frame)
-        self.verticalLayout_10.setContentsMargins(-1, 0, -1, 0)
-        self.verticalLayout_10.setSpacing(0)
-        self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.frame1 = QtWidgets.QFrame(parent=self.frame)
-        self.frame1.setMinimumSize(QtCore.QSize(456, 1))
-        self.frame1.setMaximumSize(QtCore.QSize(456, 123123))
-        self.frame1.setStyleSheet(
-            "background-color: rgb(15,15,15);\n" "border-radius:3px;"
+        self.user_name.setObjectName("user_name")
+        self.user_info_holder.addWidget(self.user_name)
+        self.verticalLayout_39.addLayout(self.user_info_holder)
+        self.verticalLayout_35.addWidget(self.user_info)
+        self.verticalLayout_34.addWidget(self.info_input_area)
+        self.horizontalLayout.addWidget(self.left_side_holder)
+        self.horizontalLayout_2.addWidget(self.left_side)
+        self.right_side = QtWidgets.QFrame(parent=self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Policy.Preferred,
+            QtWidgets.QSizePolicy.Policy.Preferred,
         )
-        self.frame1.setObjectName("frame1")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame1)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.right_side.sizePolicy().hasHeightForWidth())
+        self.right_side.setSizePolicy(sizePolicy)
+        self.right_side.setMinimumSize(QtCore.QSize(460, 542))
+        self.right_side.setMaximumSize(QtCore.QSize(460, 542))
+        self.right_side.setStyleSheet("")
+        self.right_side.setObjectName("right_side")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.right_side)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(10)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.list_area = QtWidgets.QFrame(parent=self.right_side)
+        self.list_area.setMinimumSize(QtCore.QSize(456, 1))
+        self.list_area.setMaximumSize(QtCore.QSize(456, 123123))
+        self.list_area.setStyleSheet(
+            "background-color: rgb(25,25,25);\n" "border-radius:3px;"
+        )
+        self.list_area.setObjectName("list_area")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.list_area)
         self.verticalLayout_8.setSpacing(4)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.torque_rpm_list = QtWidgets.QListWidget(parent=self.frame1)
-        self.torque_rpm_list.setStyleSheet(
+        self.upper_lists_area = QtWidgets.QHBoxLayout()
+        self.upper_lists_area.setObjectName("upper_lists_area")
+        self.ets_engine_torque_speed = QtWidgets.QVBoxLayout()
+        self.ets_engine_torque_speed.setObjectName("ets_engine_torque_speed")
+        self.engine_torque_speed_list = QtWidgets.QListWidget(parent=self.list_area)
+        self.engine_torque_speed_list.setStyleSheet(
             "background-color: rgb(76, 76, 76);\n"
             'font: 10pt "Segoe UI";\n'
             "gridline-color: rgb(0, 170, 0);\n"
             "selection-background-color: rgb(102, 0, 0);\n"
             ""
         )
-        self.torque_rpm_list.setObjectName("torque_rpm_list")
+        self.engine_torque_speed_list.setObjectName("engine_torque_speed_list")
         item = QtWidgets.QListWidgetItem()
-        self.torque_rpm_list.addItem(item)
+        self.engine_torque_speed_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
-        self.torque_rpm_list.addItem(item)
+        self.engine_torque_speed_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
-        self.torque_rpm_list.addItem(item)
+        self.engine_torque_speed_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
-        self.torque_rpm_list.addItem(item)
-        self.verticalLayout_3.addWidget(self.torque_rpm_list)
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label_6 = QtWidgets.QLabel(parent=self.frame1)
+        self.engine_torque_speed_list.addItem(item)
+        self.ets_engine_torque_speed.addWidget(self.engine_torque_speed_list)
+        self.ets_list_bottom = QtWidgets.QHBoxLayout()
+        self.ets_list_bottom.setObjectName("ets_list_bottom")
+        self.ets_list_label = QtWidgets.QLabel(parent=self.list_area)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(-1)
         font.setBold(True)
         font.setItalic(False)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet(
+        self.ets_list_label.setFont(font)
+        self.ets_list_label.setStyleSheet(
             'font: 700 11px "Segoe UI";\n' "color:rgb(210,210,210);"
         )
-        self.label_6.setObjectName("label_6")
-        self.horizontalLayout_3.addWidget(self.label_6)
-        self.pushButton_3 = QtWidgets.QPushButton(parent=self.frame1)
+        self.ets_list_label.setObjectName("ets_list_label")
+        self.ets_list_bottom.addWidget(self.ets_list_label)
+        self.ets_list_delete_button = QtWidgets.QPushButton(parent=self.list_area)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(5)
         sizePolicy.setVerticalStretch(20)
-        sizePolicy.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
-        self.pushButton_3.setSizePolicy(sizePolicy)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(18, 18))
-        self.pushButton_3.setMaximumSize(QtCore.QSize(18, 18))
-        self.pushButton_3.setSizeIncrement(QtCore.QSize(0, 10))
-        self.pushButton_3.setBaseSize(QtCore.QSize(2, 2))
+        sizePolicy.setHeightForWidth(
+            self.ets_list_delete_button.sizePolicy().hasHeightForWidth()
+        )
+        self.ets_list_delete_button.setSizePolicy(sizePolicy)
+        self.ets_list_delete_button.setMinimumSize(QtCore.QSize(18, 18))
+        self.ets_list_delete_button.setMaximumSize(QtCore.QSize(18, 18))
+        self.ets_list_delete_button.setSizeIncrement(QtCore.QSize(0, 10))
+        self.ets_list_delete_button.setBaseSize(QtCore.QSize(2, 2))
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(9)
         font.setBold(False)
         font.setItalic(False)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setCursor(
+        self.ets_list_delete_button.setFont(font)
+        self.ets_list_delete_button.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.pushButton_3.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.pushButton_3.setStyleSheet(
+        self.ets_list_delete_button.setLayoutDirection(
+            QtCore.Qt.LayoutDirection.LeftToRight
+        )
+        self.ets_list_delete_button.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             'font: 9pt "Gill Sans MT";\n'
@@ -297,20 +327,20 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_3.addWidget(self.pushButton_3)
-        self.verticalLayout_3.addLayout(self.horizontalLayout_3)
-        self.horizontalLayout_7.addLayout(self.verticalLayout_3)
-        self.label_3 = QtWidgets.QLabel(parent=self.frame1)
-        self.label_3.setMinimumSize(QtCore.QSize(1, 100))
-        self.label_3.setMaximumSize(QtCore.QSize(1, 100))
-        self.label_3.setStyleSheet("background-color: rgb(170, 0, 0);")
-        self.label_3.setText("")
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_7.addWidget(self.label_3)
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.gearbox_list = QtWidgets.QListWidget(parent=self.frame1)
+        self.ets_list_delete_button.setObjectName("ets_list_delete_button")
+        self.ets_list_bottom.addWidget(self.ets_list_delete_button)
+        self.ets_engine_torque_speed.addLayout(self.ets_list_bottom)
+        self.upper_lists_area.addLayout(self.ets_engine_torque_speed)
+        self.upper_list_seperator = QtWidgets.QLabel(parent=self.list_area)
+        self.upper_list_seperator.setMinimumSize(QtCore.QSize(1, 100))
+        self.upper_list_seperator.setMaximumSize(QtCore.QSize(1, 100))
+        self.upper_list_seperator.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.upper_list_seperator.setText("")
+        self.upper_list_seperator.setObjectName("upper_list_seperator")
+        self.upper_lists_area.addWidget(self.upper_list_seperator)
+        self.gearbox = QtWidgets.QVBoxLayout()
+        self.gearbox.setObjectName("gearbox")
+        self.gearbox_list = QtWidgets.QListWidget(parent=self.list_area)
         self.gearbox_list.setStyleSheet(
             "background-color: rgb(76, 76, 76);\n"
             'font: 10pt "Segoe UI";\n'
@@ -323,29 +353,31 @@ class Ui_VehicleDynamicsApp(object):
         self.gearbox_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
         self.gearbox_list.addItem(item)
-        self.verticalLayout_4.addWidget(self.gearbox_list)
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_7 = QtWidgets.QLabel(parent=self.frame1)
-        self.label_7.setStyleSheet(
+        self.gearbox.addWidget(self.gearbox_list)
+        self.gearbox_list_bottom = QtWidgets.QHBoxLayout()
+        self.gearbox_list_bottom.setObjectName("gearbox_list_bottom")
+        self.gearbox_list_label = QtWidgets.QLabel(parent=self.list_area)
+        self.gearbox_list_label.setStyleSheet(
             'font: 700 11px "Segoe UI";\n' "color:rgb(210,210,210);"
         )
-        self.label_7.setObjectName("label_7")
-        self.horizontalLayout_4.addWidget(self.label_7)
-        self.pushButton_4 = QtWidgets.QPushButton(parent=self.frame1)
+        self.gearbox_list_label.setObjectName("gearbox_list_label")
+        self.gearbox_list_bottom.addWidget(self.gearbox_list_label)
+        self.gearbox_list_delete_button = QtWidgets.QPushButton(parent=self.list_area)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(5)
         sizePolicy.setVerticalStretch(20)
-        sizePolicy.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
-        self.pushButton_4.setSizePolicy(sizePolicy)
-        self.pushButton_4.setMinimumSize(QtCore.QSize(18, 18))
-        self.pushButton_4.setMaximumSize(QtCore.QSize(18, 18))
-        self.pushButton_4.setCursor(
+        sizePolicy.setHeightForWidth(
+            self.gearbox_list_delete_button.sizePolicy().hasHeightForWidth()
+        )
+        self.gearbox_list_delete_button.setSizePolicy(sizePolicy)
+        self.gearbox_list_delete_button.setMinimumSize(QtCore.QSize(18, 18))
+        self.gearbox_list_delete_button.setMaximumSize(QtCore.QSize(18, 18))
+        self.gearbox_list_delete_button.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.pushButton_4.setStyleSheet(
+        self.gearbox_list_delete_button.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             'font: 9pt "Gill Sans MT";\n'
@@ -366,64 +398,66 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_4.addWidget(self.pushButton_4)
-        self.verticalLayout_4.addLayout(self.horizontalLayout_4)
-        self.horizontalLayout_7.addLayout(self.verticalLayout_4)
-        self.verticalLayout_8.addLayout(self.horizontalLayout_7)
-        self.label_2 = QtWidgets.QLabel(parent=self.frame1)
-        self.label_2.setMinimumSize(QtCore.QSize(0, 1))
-        self.label_2.setMaximumSize(QtCore.QSize(16777215, 1))
-        self.label_2.setStyleSheet("background-color: rgb(170, 0, 0);")
-        self.label_2.setText("")
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout_8.addWidget(self.label_2)
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.verticalLayout_6 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.car_param = QtWidgets.QListWidget(parent=self.frame1)
-        self.car_param.setStyleSheet(
+        self.gearbox_list_delete_button.setObjectName("gearbox_list_delete_button")
+        self.gearbox_list_bottom.addWidget(self.gearbox_list_delete_button)
+        self.gearbox.addLayout(self.gearbox_list_bottom)
+        self.upper_lists_area.addLayout(self.gearbox)
+        self.verticalLayout_8.addLayout(self.upper_lists_area)
+        self.list_seperator = QtWidgets.QLabel(parent=self.list_area)
+        self.list_seperator.setMinimumSize(QtCore.QSize(0, 1))
+        self.list_seperator.setMaximumSize(QtCore.QSize(16777215, 1))
+        self.list_seperator.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.list_seperator.setText("")
+        self.list_seperator.setObjectName("list_seperator")
+        self.verticalLayout_8.addWidget(self.list_seperator)
+        self.lower_lists_area = QtWidgets.QHBoxLayout()
+        self.lower_lists_area.setObjectName("lower_lists_area")
+        self.vehicle = QtWidgets.QVBoxLayout()
+        self.vehicle.setObjectName("vehicle")
+        self.vehicle_list = QtWidgets.QListWidget(parent=self.list_area)
+        self.vehicle_list.setStyleSheet(
             "background-color: rgb(76, 76, 76);\n"
             'font: 10pt "Segoe UI";\n'
             "gridline-color: rgb(0, 170, 0);\n"
             "selection-background-color: rgb(102, 0, 0);\n"
             ""
         )
-        self.car_param.setObjectName("car_param")
+        self.vehicle_list.setObjectName("vehicle_list")
         item = QtWidgets.QListWidgetItem()
-        self.car_param.addItem(item)
+        self.vehicle_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
-        self.car_param.addItem(item)
-        self.verticalLayout_6.addWidget(self.car_param)
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.label_8 = QtWidgets.QLabel(parent=self.frame1)
+        self.vehicle_list.addItem(item)
+        self.vehicle.addWidget(self.vehicle_list)
+        self.vehicle_list_bottom = QtWidgets.QHBoxLayout()
+        self.vehicle_list_bottom.setObjectName("vehicle_list_bottom")
+        self.vehicle_list_label = QtWidgets.QLabel(parent=self.list_area)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(-1)
         font.setBold(True)
         font.setItalic(False)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet(
+        self.vehicle_list_label.setFont(font)
+        self.vehicle_list_label.setStyleSheet(
             'font: 700 11px "Segoe UI";\n' "color:rgb(210,210,210);"
         )
-        self.label_8.setObjectName("label_8")
-        self.horizontalLayout_5.addWidget(self.label_8)
-        self.pushButton_5 = QtWidgets.QPushButton(parent=self.frame1)
+        self.vehicle_list_label.setObjectName("vehicle_list_label")
+        self.vehicle_list_bottom.addWidget(self.vehicle_list_label)
+        self.vehicle_list_delete_button = QtWidgets.QPushButton(parent=self.list_area)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(5)
         sizePolicy.setVerticalStretch(20)
-        sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
-        self.pushButton_5.setSizePolicy(sizePolicy)
-        self.pushButton_5.setMinimumSize(QtCore.QSize(18, 18))
-        self.pushButton_5.setMaximumSize(QtCore.QSize(18, 18))
-        self.pushButton_5.setCursor(
+        sizePolicy.setHeightForWidth(
+            self.vehicle_list_delete_button.sizePolicy().hasHeightForWidth()
+        )
+        self.vehicle_list_delete_button.setSizePolicy(sizePolicy)
+        self.vehicle_list_delete_button.setMinimumSize(QtCore.QSize(18, 18))
+        self.vehicle_list_delete_button.setMaximumSize(QtCore.QSize(18, 18))
+        self.vehicle_list_delete_button.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.pushButton_5.setStyleSheet(
+        self.vehicle_list_delete_button.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             'font: 9pt "Gill Sans MT";\n'
@@ -444,55 +478,57 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_5.addWidget(self.pushButton_5)
-        self.verticalLayout_6.addLayout(self.horizontalLayout_5)
-        self.horizontalLayout_8.addLayout(self.verticalLayout_6)
-        self.label_4 = QtWidgets.QLabel(parent=self.frame1)
-        self.label_4.setMinimumSize(QtCore.QSize(1, 100))
-        self.label_4.setMaximumSize(QtCore.QSize(1, 100))
-        self.label_4.setStyleSheet("background-color: rgb(170, 0, 0);")
-        self.label_4.setText("")
-        self.label_4.setObjectName("label_4")
-        self.horizontalLayout_8.addWidget(self.label_4)
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.env_param = QtWidgets.QListWidget(parent=self.frame1)
-        self.env_param.setStyleSheet(
+        self.vehicle_list_delete_button.setObjectName("vehicle_list_delete_button")
+        self.vehicle_list_bottom.addWidget(self.vehicle_list_delete_button)
+        self.vehicle.addLayout(self.vehicle_list_bottom)
+        self.lower_lists_area.addLayout(self.vehicle)
+        self.lower_list_seperator = QtWidgets.QLabel(parent=self.list_area)
+        self.lower_list_seperator.setMinimumSize(QtCore.QSize(1, 100))
+        self.lower_list_seperator.setMaximumSize(QtCore.QSize(1, 100))
+        self.lower_list_seperator.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.lower_list_seperator.setText("")
+        self.lower_list_seperator.setObjectName("lower_list_seperator")
+        self.lower_lists_area.addWidget(self.lower_list_seperator)
+        self.environment = QtWidgets.QVBoxLayout()
+        self.environment.setObjectName("environment")
+        self.environment_list = QtWidgets.QListWidget(parent=self.list_area)
+        self.environment_list.setStyleSheet(
             "background-color: rgb(76, 76, 76);\n"
             'font: 10pt "Segoe UI";\n'
             "gridline-color: rgb(0, 170, 0);\n"
             "selection-background-color: rgb(102, 0, 0);\n"
             ""
         )
-        self.env_param.setObjectName("env_param")
+        self.environment_list.setObjectName("environment_list")
         item = QtWidgets.QListWidgetItem()
-        self.env_param.addItem(item)
+        self.environment_list.addItem(item)
         item = QtWidgets.QListWidgetItem()
-        self.env_param.addItem(item)
-        self.verticalLayout_7.addWidget(self.env_param)
-        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.label_9 = QtWidgets.QLabel(parent=self.frame1)
-        self.label_9.setStyleSheet(
+        self.environment_list.addItem(item)
+        self.environment.addWidget(self.environment_list)
+        self.envrionment_list_bottom = QtWidgets.QHBoxLayout()
+        self.envrionment_list_bottom.setObjectName("envrionment_list_bottom")
+        self.env_list_label = QtWidgets.QLabel(parent=self.list_area)
+        self.env_list_label.setStyleSheet(
             'font: 700 11px "Segoe UI";\n' "color:rgb(210,210,210);"
         )
-        self.label_9.setObjectName("label_9")
-        self.horizontalLayout_6.addWidget(self.label_9)
-        self.pushButton_6 = QtWidgets.QPushButton(parent=self.frame1)
+        self.env_list_label.setObjectName("env_list_label")
+        self.envrionment_list_bottom.addWidget(self.env_list_label)
+        self.env_list_delete_button = QtWidgets.QPushButton(parent=self.list_area)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Fixed
         )
         sizePolicy.setHorizontalStretch(5)
         sizePolicy.setVerticalStretch(20)
-        sizePolicy.setHeightForWidth(self.pushButton_6.sizePolicy().hasHeightForWidth())
-        self.pushButton_6.setSizePolicy(sizePolicy)
-        self.pushButton_6.setMinimumSize(QtCore.QSize(18, 18))
-        self.pushButton_6.setMaximumSize(QtCore.QSize(18, 18))
-        self.pushButton_6.setCursor(
+        sizePolicy.setHeightForWidth(
+            self.env_list_delete_button.sizePolicy().hasHeightForWidth()
+        )
+        self.env_list_delete_button.setSizePolicy(sizePolicy)
+        self.env_list_delete_button.setMinimumSize(QtCore.QSize(18, 18))
+        self.env_list_delete_button.setMaximumSize(QtCore.QSize(18, 18))
+        self.env_list_delete_button.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.pushButton_6.setStyleSheet(
+        self.env_list_delete_button.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             'font: 9pt "Gill Sans MT";\n'
@@ -513,80 +549,55 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.horizontalLayout_6.addWidget(self.pushButton_6)
-        self.verticalLayout_7.addLayout(self.horizontalLayout_6)
-        self.horizontalLayout_8.addLayout(self.verticalLayout_7)
-        self.verticalLayout_8.addLayout(self.horizontalLayout_8)
-        self.verticalLayout_10.addWidget(self.frame1)
-        self.groupBox = QtWidgets.QGroupBox(parent=self.frame)
+        self.env_list_delete_button.setObjectName("env_list_delete_button")
+        self.envrionment_list_bottom.addWidget(self.env_list_delete_button)
+        self.environment.addLayout(self.envrionment_list_bottom)
+        self.lower_lists_area.addLayout(self.environment)
+        self.verticalLayout_8.addLayout(self.lower_lists_area)
+        self.verticalLayout_10.addWidget(self.list_area)
+        self.graph_area = QtWidgets.QGroupBox(parent=self.right_side)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Policy.Preferred,
             QtWidgets.QSizePolicy.Policy.Preferred,
         )
         sizePolicy.setHorizontalStretch(8)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
-        self.groupBox.setSizePolicy(sizePolicy)
-        self.groupBox.setMinimumSize(QtCore.QSize(456, 150))
-        self.groupBox.setMaximumSize(QtCore.QSize(456, 150))
+        sizePolicy.setHeightForWidth(self.graph_area.sizePolicy().hasHeightForWidth())
+        self.graph_area.setSizePolicy(sizePolicy)
+        self.graph_area.setMinimumSize(QtCore.QSize(456, 150))
+        self.graph_area.setMaximumSize(QtCore.QSize(456, 150))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(9)
         font.setBold(True)
         font.setItalic(True)
-        self.groupBox.setFont(font)
-        self.groupBox.setStyleSheet(
+        self.graph_area.setFont(font)
+        self.graph_area.setStyleSheet(
             "selection-color: rgb(17, 17, 17);\n"
             'font: 700 italic 9pt "Segoe UI";\n'
-            "color: rgb(134,1,22);"
+            "color: #aa0000;\n"
+            ""
         )
-        self.groupBox.setObjectName("groupBox")
-        self.gridLayout = QtWidgets.QGridLayout(self.groupBox)
+        self.graph_area.setObjectName("graph_area")
+        self.gridLayout = QtWidgets.QGridLayout(self.graph_area)
         self.gridLayout.setObjectName("gridLayout")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setContentsMargins(-1, 0, -1, 7)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setSizeConstraint(
+        self.button_holder = QtWidgets.QHBoxLayout()
+        self.button_holder.setContentsMargins(-1, 0, -1, 7)
+        self.button_holder.setObjectName("button_holder")
+        self.left_graphs = QtWidgets.QVBoxLayout()
+        self.left_graphs.setSizeConstraint(
             QtWidgets.QLayout.SizeConstraint.SetMaximumSize
         )
-        self.verticalLayout.setContentsMargins(5, -1, -1, -1)
-        self.verticalLayout.setSpacing(10)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.rpm_v = QtWidgets.QPushButton(parent=self.groupBox)
-        self.rpm_v.setMinimumSize(QtCore.QSize(180, 28))
-        self.rpm_v.setMaximumSize(QtCore.QSize(180, 20))
-        self.rpm_v.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.rpm_v.setStyleSheet(
-            "QPushButton{\n"
-            "border-radius:2px;\n"
-            "color:rgb(230,230,230);\n"
-            'font: 9pt "Gill Sans MT";\n'
-            "background-color: rgb(20,20,20);\n"
-            "cursor:pointer;\n"
-            "border: 1px solid rgb(168, 168, 168);\n"
-            "}\n"
-            "QPushButton:hover {\n"
-            "color:rgb(9, 9, 9);\n"
-            "background-color: rgb(168, 168, 168);\n"
-            "}\n"
-            "QPushButton:pressed {\n"
-            "color:rgb(9, 9, 9);\n"
-            "background-color: rgb(150,150,150);\n"
-            "border: 1px solid rgb(150,150,150);\n"
-            "}"
-        )
-        self.rpm_v.setIconSize(QtCore.QSize(16, 20))
-        self.rpm_v.setObjectName("rpm_v")
-        self.verticalLayout.addWidget(self.rpm_v)
-        self.torque_rpm = QtWidgets.QPushButton(parent=self.groupBox)
-        self.torque_rpm.setMinimumSize(QtCore.QSize(180, 28))
-        self.torque_rpm.setMaximumSize(QtCore.QSize(180, 20))
-        self.torque_rpm.setCursor(
+        self.left_graphs.setContentsMargins(5, -1, -1, -1)
+        self.left_graphs.setSpacing(10)
+        self.left_graphs.setObjectName("left_graphs")
+        self.enginev_vehiclev = QtWidgets.QPushButton(parent=self.graph_area)
+        self.enginev_vehiclev.setMinimumSize(QtCore.QSize(180, 28))
+        self.enginev_vehiclev.setMaximumSize(QtCore.QSize(180, 20))
+        self.enginev_vehiclev.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.torque_rpm.setStyleSheet(
+        self.enginev_vehiclev.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             "color:rgb(230,230,230);\n"
@@ -605,16 +616,16 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.torque_rpm.setObjectName("torque_rpm")
-        self.verticalLayout.addWidget(self.torque_rpm)
-        self.torque_rpm_power = QtWidgets.QPushButton(parent=self.groupBox)
-        self.torque_rpm_power.setEnabled(True)
-        self.torque_rpm_power.setMinimumSize(QtCore.QSize(180, 28))
-        self.torque_rpm_power.setMaximumSize(QtCore.QSize(180, 20))
-        self.torque_rpm_power.setCursor(
+        self.enginev_vehiclev.setIconSize(QtCore.QSize(16, 20))
+        self.enginev_vehiclev.setObjectName("enginev_vehiclev")
+        self.left_graphs.addWidget(self.enginev_vehiclev)
+        self.torque_enginev = QtWidgets.QPushButton(parent=self.graph_area)
+        self.torque_enginev.setMinimumSize(QtCore.QSize(180, 28))
+        self.torque_enginev.setMaximumSize(QtCore.QSize(180, 20))
+        self.torque_enginev.setCursor(
             QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
         )
-        self.torque_rpm_power.setStyleSheet(
+        self.torque_enginev.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             "color:rgb(230,230,230);\n"
@@ -633,17 +644,16 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.torque_rpm_power.setObjectName("torque_rpm_power")
-        self.verticalLayout.addWidget(self.torque_rpm_power)
-        self.horizontalLayout_2.addLayout(self.verticalLayout)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setContentsMargins(10, -1, -1, -1)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.F_v = QtWidgets.QPushButton(parent=self.groupBox)
-        self.F_v.setMinimumSize(QtCore.QSize(230, 40))
-        self.F_v.setMaximumSize(QtCore.QSize(210, 28))
-        self.F_v.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.F_v.setStyleSheet(
+        self.torque_enginev.setObjectName("torque_enginev")
+        self.left_graphs.addWidget(self.torque_enginev)
+        self.torque_enginev_power = QtWidgets.QPushButton(parent=self.graph_area)
+        self.torque_enginev_power.setEnabled(True)
+        self.torque_enginev_power.setMinimumSize(QtCore.QSize(180, 28))
+        self.torque_enginev_power.setMaximumSize(QtCore.QSize(180, 20))
+        self.torque_enginev_power.setCursor(
+            QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
+        self.torque_enginev_power.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             "color:rgb(230,230,230);\n"
@@ -662,13 +672,19 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.F_v.setObjectName("F_v")
-        self.verticalLayout_2.addWidget(self.F_v)
-        self.Fnet_v = QtWidgets.QPushButton(parent=self.groupBox)
-        self.Fnet_v.setMinimumSize(QtCore.QSize(230, 40))
-        self.Fnet_v.setMaximumSize(QtCore.QSize(205, 28))
-        self.Fnet_v.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.Fnet_v.setStyleSheet(
+        self.torque_enginev_power.setObjectName("torque_enginev_power")
+        self.left_graphs.addWidget(self.torque_enginev_power)
+        self.button_holder.addLayout(self.left_graphs)
+        self.right_graphs = QtWidgets.QVBoxLayout()
+        self.right_graphs.setContentsMargins(10, -1, -1, -1)
+        self.right_graphs.setObjectName("right_graphs")
+        self.tractiveF_vehiclev = QtWidgets.QPushButton(parent=self.graph_area)
+        self.tractiveF_vehiclev.setMinimumSize(QtCore.QSize(230, 40))
+        self.tractiveF_vehiclev.setMaximumSize(QtCore.QSize(210, 28))
+        self.tractiveF_vehiclev.setCursor(
+            QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
+        self.tractiveF_vehiclev.setStyleSheet(
             "QPushButton{\n"
             "border-radius:2px;\n"
             "color:rgb(230,230,230);\n"
@@ -687,17 +703,43 @@ class Ui_VehicleDynamicsApp(object):
             "border: 1px solid rgb(150,150,150);\n"
             "}"
         )
-        self.Fnet_v.setObjectName("Fnet_v")
-        self.verticalLayout_2.addWidget(self.Fnet_v)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_2)
-        self.gridLayout.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
-        self.verticalLayout_10.addWidget(self.groupBox)
-        self.horizontalLayout_20.addWidget(self.frame)
-        self.horizontalLayout_19.addLayout(self.horizontalLayout_20)
-        self.verticalLayout_5.addWidget(self.frame_2)
+        self.tractiveF_vehiclev.setObjectName("tractiveF_vehiclev")
+        self.right_graphs.addWidget(self.tractiveF_vehiclev)
+        self.tractiveFnet_vehiclev = QtWidgets.QPushButton(parent=self.graph_area)
+        self.tractiveFnet_vehiclev.setMinimumSize(QtCore.QSize(230, 40))
+        self.tractiveFnet_vehiclev.setMaximumSize(QtCore.QSize(205, 28))
+        self.tractiveFnet_vehiclev.setCursor(
+            QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        )
+        self.tractiveFnet_vehiclev.setStyleSheet(
+            "QPushButton{\n"
+            "border-radius:2px;\n"
+            "color:rgb(230,230,230);\n"
+            'font: 9pt "Gill Sans MT";\n'
+            "background-color: rgb(20,20,20);\n"
+            "cursor:pointer;\n"
+            "border: 1px solid rgb(168, 168, 168);\n"
+            "}\n"
+            "QPushButton:hover {\n"
+            "color:rgb(9, 9, 9);\n"
+            "background-color: rgb(168, 168, 168);\n"
+            "}\n"
+            "QPushButton:pressed {\n"
+            "color:rgb(9, 9, 9);\n"
+            "background-color: rgb(150,150,150);\n"
+            "border: 1px solid rgb(150,150,150);\n"
+            "}"
+        )
+        self.tractiveFnet_vehiclev.setObjectName("tractiveFnet_vehiclev")
+        self.right_graphs.addWidget(self.tractiveFnet_vehiclev)
+        self.button_holder.addLayout(self.right_graphs)
+        self.gridLayout.addLayout(self.button_holder, 0, 0, 1, 1)
+        self.verticalLayout_10.addWidget(self.graph_area)
+        self.horizontalLayout_2.addWidget(self.right_side)
+        self.verticalLayout_2.addWidget(self.frame)
         VehicleDynamicsApp.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=VehicleDynamicsApp)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 923, 34))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 890, 34))
         self.menubar.setObjectName("menubar")
         self.menuDosya = QtWidgets.QMenu(parent=self.menubar)
         self.menuDosya.setObjectName("menuDosya")
@@ -796,40 +838,38 @@ class Ui_VehicleDynamicsApp(object):
         self.retranslateUi(VehicleDynamicsApp)
         self.actionKapat.triggered.connect(VehicleDynamicsApp.close)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(VehicleDynamicsApp)
-        VehicleDynamicsApp.setTabOrder(self.car_param, self.env_param)
-        VehicleDynamicsApp.setTabOrder(self.env_param, self.torque_rpm)
-        VehicleDynamicsApp.setTabOrder(self.torque_rpm, self.torque_rpm_power)
-        VehicleDynamicsApp.setTabOrder(self.torque_rpm_power, self.rpm_v)
-        VehicleDynamicsApp.setTabOrder(self.rpm_v, self.F_v)
-        VehicleDynamicsApp.setTabOrder(self.F_v, self.Fnet_v)
 
     def retranslateUi(self, VehicleDynamicsApp):
         _translate = QtCore.QCoreApplication.translate
         VehicleDynamicsApp.setWindowTitle(
             _translate("VehicleDynamicsApp", "Pancar V1.0")
         )
-        self.groupBox_10.setTitle(
+        self.vehicle_info.setTitle(
             _translate("VehicleDynamicsApp", "Vehicle Information")
         )
-        self.label_30.setText(_translate("VehicleDynamicsApp", "Brand-Model"))
-        self.label_31.setText(_translate("VehicleDynamicsApp", "Engine Brand-Model"))
-        self.groupBox_11.setTitle(_translate("VehicleDynamicsApp", "User Information"))
-        self.label_32.setText(_translate("VehicleDynamicsApp", "   Name Surname"))
-        __sortingEnabled = self.torque_rpm_list.isSortingEnabled()
-        self.torque_rpm_list.setSortingEnabled(False)
-        item = self.torque_rpm_list.item(0)
+        self.car_model_label.setText(_translate("VehicleDynamicsApp", "Brand-Model"))
+        self.engine_model_label.setText(
+            _translate("VehicleDynamicsApp", "Engine Brand-Model")
+        )
+        self.user_info.setTitle(_translate("VehicleDynamicsApp", "User Information"))
+        self.user_info_label_area.setText(
+            _translate("VehicleDynamicsApp", "   Name Surname")
+        )
+        __sortingEnabled = self.engine_torque_speed_list.isSortingEnabled()
+        self.engine_torque_speed_list.setSortingEnabled(False)
+        item = self.engine_torque_speed_list.item(0)
         item.setText(_translate("VehicleDynamicsApp", "Rb-26  "))
-        item = self.torque_rpm_list.item(1)
+        item = self.engine_torque_speed_list.item(1)
         item.setText(_translate("VehicleDynamicsApp", "New Item"))
-        item = self.torque_rpm_list.item(2)
+        item = self.engine_torque_speed_list.item(2)
         item.setText(_translate("VehicleDynamicsApp", "New Item"))
-        item = self.torque_rpm_list.item(3)
+        item = self.engine_torque_speed_list.item(3)
         item.setText(_translate("VehicleDynamicsApp", "2jz"))
-        self.torque_rpm_list.setSortingEnabled(__sortingEnabled)
-        self.label_6.setText(
+        self.engine_torque_speed_list.setSortingEnabled(__sortingEnabled)
+        self.ets_list_label.setText(
             _translate("VehicleDynamicsApp", "Engine Torque-Speed Values")
         )
-        self.pushButton_3.setText(_translate("VehicleDynamicsApp", "-"))
+        self.ets_list_delete_button.setText(_translate("VehicleDynamicsApp", "-"))
         __sortingEnabled = self.gearbox_list.isSortingEnabled()
         self.gearbox_list.setSortingEnabled(False)
         item = self.gearbox_list.item(0)
@@ -837,42 +877,46 @@ class Ui_VehicleDynamicsApp(object):
         item = self.gearbox_list.item(1)
         item.setText(_translate("VehicleDynamicsApp", "Nissan GTR 6"))
         self.gearbox_list.setSortingEnabled(__sortingEnabled)
-        self.label_7.setText(_translate("VehicleDynamicsApp", "Gearbox Parameters"))
-        self.pushButton_4.setText(_translate("VehicleDynamicsApp", "-"))
-        __sortingEnabled = self.car_param.isSortingEnabled()
-        self.car_param.setSortingEnabled(False)
-        item = self.car_param.item(0)
+        self.gearbox_list_label.setText(
+            _translate("VehicleDynamicsApp", "Gearbox Parameters")
+        )
+        self.gearbox_list_delete_button.setText(_translate("VehicleDynamicsApp", "-"))
+        __sortingEnabled = self.vehicle_list.isSortingEnabled()
+        self.vehicle_list.setSortingEnabled(False)
+        item = self.vehicle_list.item(0)
         item.setText(_translate("VehicleDynamicsApp", "Toyota Supra "))
-        item = self.car_param.item(1)
+        item = self.vehicle_list.item(1)
         item.setText(_translate("VehicleDynamicsApp", "Nissan GTR R34"))
-        self.car_param.setSortingEnabled(__sortingEnabled)
-        self.label_8.setText(_translate("VehicleDynamicsApp", "Vehicle Parameters"))
-        self.pushButton_5.setText(_translate("VehicleDynamicsApp", "-"))
-        __sortingEnabled = self.env_param.isSortingEnabled()
-        self.env_param.setSortingEnabled(False)
-        item = self.env_param.item(0)
+        self.vehicle_list.setSortingEnabled(__sortingEnabled)
+        self.vehicle_list_label.setText(
+            _translate("VehicleDynamicsApp", "Vehicle Parameters")
+        )
+        self.vehicle_list_delete_button.setText(_translate("VehicleDynamicsApp", "-"))
+        __sortingEnabled = self.environment_list.isSortingEnabled()
+        self.environment_list.setSortingEnabled(False)
+        item = self.environment_list.item(0)
         item.setText(_translate("VehicleDynamicsApp", "Analysis 1"))
-        item = self.env_param.item(1)
+        item = self.environment_list.item(1)
         item.setText(_translate("VehicleDynamicsApp", "high"))
-        self.env_param.setSortingEnabled(__sortingEnabled)
-        self.label_9.setText(
+        self.environment_list.setSortingEnabled(__sortingEnabled)
+        self.env_list_label.setText(
             _translate("VehicleDynamicsApp", "Environmental Paramaters")
         )
-        self.pushButton_6.setText(_translate("VehicleDynamicsApp", "-"))
-        self.groupBox.setTitle(_translate("VehicleDynamicsApp", "Performance Graphs"))
-        self.rpm_v.setText(
+        self.env_list_delete_button.setText(_translate("VehicleDynamicsApp", "-"))
+        self.graph_area.setTitle(_translate("VehicleDynamicsApp", "Performance Graphs"))
+        self.enginev_vehiclev.setText(
             _translate("VehicleDynamicsApp", "Engine Speed vs Vehicle Speed")
         )
-        self.torque_rpm.setText(_translate("VehicleDynamicsApp", "Torque vs Speed"))
-        self.torque_rpm_power.setText(
+        self.torque_enginev.setText(_translate("VehicleDynamicsApp", "Torque vs Speed"))
+        self.torque_enginev_power.setText(
             _translate("VehicleDynamicsApp", "Torque vs Speed vs Power")
         )
-        self.F_v.setText(
+        self.tractiveF_vehiclev.setText(
             _translate(
                 "VehicleDynamicsApp", "Tractive Effort (without res.) vs Vehicle Speed"
             )
         )
-        self.Fnet_v.setText(
+        self.tractiveFnet_vehiclev.setText(
             _translate("VehicleDynamicsApp", "Tractive Effort vs Vehicle Speed")
         )
         self.menuDosya.setTitle(_translate("VehicleDynamicsApp", "File"))
@@ -894,4 +938,12 @@ class Ui_VehicleDynamicsApp(object):
         )
 
 
+if __name__ == "__main__":
+    import sys
 
+    app = QtWidgets.QApplication(sys.argv)
+    VehicleDynamicsApp = QtWidgets.QMainWindow()
+    ui = Ui_VehicleDynamicsApp()
+    ui.setupUi(VehicleDynamicsApp)
+    VehicleDynamicsApp.show()
+    sys.exit(app.exec())
