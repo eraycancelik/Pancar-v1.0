@@ -9,8 +9,8 @@
 import sys
 
 sys.path.append("..")
-from package.ui import res_rc
-from PyQt5 import QtCore, QtGui, QtWidgets
+from package.ui import main_rc
+from PyQt6 import QtCore, QtGui, QtWidgets
 from package.graphs import EngineDataGraph
 import sys
 from package.engine import Motor

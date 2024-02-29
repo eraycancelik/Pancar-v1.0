@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'test.ui'
+# Form implementation generated from reading ui file 'main.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -24,7 +24,7 @@ class Ui_VehicleDynamicsApp(object):
             VehicleDynamicsApp.sizePolicy().hasHeightForWidth()
         )
         VehicleDynamicsApp.setSizePolicy(sizePolicy)
-        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(890, 617))
+        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(890, 623))
         VehicleDynamicsApp.setMaximumSize(QtCore.QSize(890, 623))
         font = QtGui.QFont()
         font.setFamily("Bahnschrift SemiLight")
@@ -38,7 +38,7 @@ class Ui_VehicleDynamicsApp(object):
         VehicleDynamicsApp.setAcceptDrops(False)
         icon = QtGui.QIcon()
         icon.addPixmap(
-            QtGui.QPixmap(":/img/assets/dark-car-from-side-vector-9761198.jpg"),
+            QtGui.QPixmap(":/img/icons/icon.jpg"),
             QtGui.QIcon.Mode.Normal,
             QtGui.QIcon.State.Off,
         )
@@ -49,6 +49,7 @@ class Ui_VehicleDynamicsApp(object):
             "background-color: rgb(28,28,28);\n"
             "color:rgb(255,255,255);"
         )
+        VehicleDynamicsApp.setIconSize(QtCore.QSize(40, 40))
         VehicleDynamicsApp.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=VehicleDynamicsApp)
         self.centralwidget.setMinimumSize(QtCore.QSize(890, 546))
@@ -86,7 +87,7 @@ class Ui_VehicleDynamicsApp(object):
         self.pancar_image.setMaximumSize(QtCore.QSize(411, 301))
         self.pancar_image.setAutoFillBackground(False)
         self.pancar_image.setStyleSheet(
-            "border:3px solid rgba(50,50,50,.2); margin:5px;"
+            "border:3px solid rgba(50,50,50,.2); margin:6px;"
         )
         self.pancar_image.setText("")
         self.pancar_image.setPixmap(
@@ -842,7 +843,7 @@ class Ui_VehicleDynamicsApp(object):
     def retranslateUi(self, VehicleDynamicsApp):
         _translate = QtCore.QCoreApplication.translate
         VehicleDynamicsApp.setWindowTitle(
-            _translate("VehicleDynamicsApp", "Pancar V1.0")
+            _translate("VehicleDynamicsApp", "Pancar v1.0")
         )
         self.vehicle_info.setTitle(
             _translate("VehicleDynamicsApp", "Vehicle Information")

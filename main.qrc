@@ -2,6 +2,7 @@
   <qresource prefix="img">
     <file>icons/dark-car-from-side-vector-9761198.jpg</file>
     <file>icons/engine.png</file>
+    <file>icons/icon.jpg</file>
     <file>icons/gearbox.jpg</file>
     <file>icons/gearbox2.jpg</file>
     <file>icons/pancar.jpg</file>

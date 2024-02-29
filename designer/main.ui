@@ -47,11 +47,11 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>Pancar V1.0</string>
+   <string>Pancar v1.0</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/img/assets/dark-car-from-side-vector-9761198.jpg</normaloff>:/img/assets/dark-car-from-side-vector-9761198.jpg</iconset>
+   <iconset resource="../main.qrc">
+    <normaloff>:/img/icons/icon.jpg</normaloff>:/img/icons/icon.jpg</iconset>
   </property>
   <property name="toolTipDuration">
    <number>-1</number>
@@ -60,6 +60,12 @@
    <string notr="true">font: 350 9pt &quot;Bahnschrift SemiLight&quot;;
 background-color: rgb(28,28,28);
 color:rgb(255,255,255);</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>40</width>
+    <height>40</height>
+   </size>
   </property>
   <property name="tabShape">
    <enum>QTabWidget::TabShape::Triangular</enum>
