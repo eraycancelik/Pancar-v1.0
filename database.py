@@ -1,53 +1,207 @@
-import os
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, Float
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+import os
 
-
-# Create the SQLite database file
+# Create a SQLite database file
 database_dir = os.path.join(os.getcwd(), "db")
 app_database = os.path.join(database_dir, "pancar.db")
 
 engine = create_engine("sqlite:///" + app_database, echo=True)
 
-# Create a base class for declarative models
 Base = declarative_base()
-Base.metadata.create_all(engine)
-# Create the tables in the database
-
-
-# Create a session to interact with the database
 Session = sessionmaker(bind=engine)
 session = Session()
 
 
-class User(Base):
-    __tablename__ = "users"
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    age = Column(Integer)
+class Engine_db:
+    class Engine(Base):
+        __tablename__ = "engines"
+        id = Column(Integer, primary_key=True)
+        engine_name = Column(String)
+        speed = Column(String)
+        torque = Column(String)
+
+    def __init__(self, engine_name, speed, torque):
+        self.engine_name = engine_name
+        self.speed = speed
+        self.torque = torque
+
+    def create_engine(self):
+        new_engine = self.Engine(
+            engine_name=self.engine_name, speed=self.speed, torque=self.torque
+        )
+        session.add(new_engine)
+        session.commit()
+        session.close()
 
 
-# # Insert a new user
-new_user = User(id=12, name="John Doe", age=25)
-session.add(new_user)
-session.commit()
+class Gearbox_db:
+    class Gearbox(Base):
+        __tablename__ = "gearboxes"
+        id = Column(Integer, primary_key=True)
+        gearbox_name = Column(String)
+        gear_ratio_list = Column(String)
+        differential_gear_ratio = Column(Float)
+        powertrain_efficiency = Column(Float)
 
-# # Query all users
-# users = session.query(User).all()
-# for user in users:
-#     print(user.name, user.age)
+    def __init__(
+        self,
+        gearbox_name,
+        gear_ratio_list,
+        differential_gear_ratio,
+        powertrain_efficiency,
+    ):
+        self.gearbox_name = gearbox_name
+        self.gear_ratio_list = gear_ratio_list
+        self.differential_gear_ratio = differential_gear_ratio
+        self.powertrain_efficiency = powertrain_efficiency
+
+    def create_gearbox(self):
+        new_gearbox = self.Gearbox(
+            gearbox_name=self.gearbox_name,
+            gear_ratio_list=self.gear_ratio_list,
+            differential_gear_ratio=self.differential_gear_ratio,
+            powertrain_efficiency=self.powertrain_efficiency,
+        )
+        session.add(new_gearbox)
+        session.commit()
+        session.close()
+
+
+class Environment_db:
+    class Environment(Base):
+        __tablename__ = "environments"
+        id = Column(Integer, primary_key=True)
+        environment_name = Column(String)
+        wind_speed = Column(Float)
+        slope_angel_road = Column(Float)
+        air_density = Column(Float)
+        gravitational_force = Column(Float)
+
+    def __init__(
+        self,
+        environment_name,
+        wind_speed,
+        slope_angel_road,
+        air_density,
+        gravitational_force,
+    ):
+        self.environment_name = environment_name
+        self.wind_speed = wind_speed
+        self.slope_angel_road = slope_angel_road
+        self.air_density = air_density
+        self.gravitational_force = gravitational_force
+
+    def create_environment(self):
+        new_environment = self.Environment(
+            environment_name=self.environment_name,
+            wind_speed=self.wind_speed,
+            slope_angel_road=self.slope_angel_road,
+            air_density=self.slope_angel_road,
+            gravitational_force=self.gravitational_force,
+        )
+        session.add(new_environment)
+        session.commit()
+        session.close()
+
+
+class Vehicle_db:
+    class Vehicle(Base):
+        __tablename__ = "vehicles"
+        id = Column(Integer, primary_key=True)
+        vehicle_name = Column(String)
+        vehicle_mass = Column(Float)
+        c_aero = Column(Float)
+        af_projection_area = Column(Float)
+        rolling_resistance = Column(Float)
+        r_dynamic_rolling = Column(Float)
+
+    def __init__(
+        self,
+        vehicle_name,
+        vehicle_mass,
+        c_aero,
+        af_projection_area,
+        rolling_resistance,
+        r_dynamic_rolling,
+    ):
+        self.vehicle_name = vehicle_name
+        self.vehicle_mass = vehicle_mass
+        self.c_aero = c_aero
+        self.af_projection_area = af_projection_area
+        self.rolling_resistance = rolling_resistance
+        self.r_dynamic_rolling = r_dynamic_rolling
+
+    def create_vehicle(self):
+        new_vehicle = self.Vehicle(
+            vehicle_name=self.vehicle_name,
+            vehicle_mass=self.vehicle_mass,
+            c_aero=self.c_aero,
+            af_projection_area=self.af_projection_area,
+            rolling_resistance=self.rolling_resistance,
+            r_dynamic_rolling=self.r_dynamic_rolling,
+        )
+        session.add(new_vehicle)
+        session.commit()
+        session.close()
+
+
+# Create the table in the database
+Base.metadata.create_all(engine)
+
+
+# Define a model class
+# class User(Base):
+#     __tablename__ = "users"
+#     id = Column(Integer, primary_key=True)
+#     name = Column(String)
+#     email = Column(String)
+
+
+# def create_new_user():
+#     new_user = User(name="test", email="test@gmail.com")
+#     session.add(new_user)
+#     session.commit()
+#     session.close()
+
+
+# # Read all users
+# def read_users():
+#     users = session.query(User).all()
+#     for user in users:
+#         print(user.name, user.email)
+#     session.close()
+
 
 # # Update a user
-# user = session.query(User).filter_by(name="John Doe").first()
-# user.age = 30
-# session.commit()
+# def update_user():
+#     user = session.query(User).filter_by(name="Eray").first()
+#     user.email = "eraycancelik@hotmail.com"
+#     session.commit()
+#     session.refresh(user)
+#     session.close()
+
 
 # # Delete a user
-# user = session.query(User).filter_by(name="John Doe").first()
-# session.delete(user)
-# session.commit()
+# def delete_user():
+#     user = session.query(User).filter_by(name="Eray").first()
+#     session.delete(user)
+#     session.commit()
+#     session.close()
 
-# Close the session
-session.close()
+
+# Create a new user
+
+# vehicle_data = {
+#     "vehicle_name": "Car1",
+#     "vehicle_mass": 1500.0,
+#     "c_aero": 0.3,
+#     "af_projection_area": 5.0,
+#     "rolling_resistance": 0.01,
+#     "r_dynamic_rolling": 0.02,
+# }
+
+
+# create_new_user()
+# delete_user()
