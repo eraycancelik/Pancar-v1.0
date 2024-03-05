@@ -22,7 +22,7 @@ class Engine_db:
         speed = Column(String)
         torque = Column(String)
 
-    def __init__(self, engine_name, speed, torque):
+    def __init__(self, engine_name=None, speed=None, torque=None):
         self.engine_name = engine_name
         self.speed = speed
         self.torque = torque
@@ -32,6 +32,12 @@ class Engine_db:
             engine_name=self.engine_name, speed=self.speed, torque=self.torque
         )
         session.add(new_engine)
+        session.commit()
+        session.close()
+
+    def delete_engine(self, engine):
+        new_engine = session.query(self.Engine).filter_by(engine_name=engine).first()
+        session.delete(new_engine)
         session.commit()
         session.close()
 
@@ -47,10 +53,10 @@ class Gearbox_db:
 
     def __init__(
         self,
-        gearbox_name,
-        gear_ratio_list,
-        differential_gear_ratio,
-        powertrain_efficiency,
+        gearbox_name=None,
+        gear_ratio_list=None,
+        differential_gear_ratio=None,
+        powertrain_efficiency=None,
     ):
         self.gearbox_name = gearbox_name
         self.gear_ratio_list = gear_ratio_list
@@ -68,6 +74,14 @@ class Gearbox_db:
         session.commit()
         session.close()
 
+    def delete_gearbox(self, gearbox):
+        new_gearbox = (
+            session.query(self.Gearbox).filter_by(gearbox_name=gearbox).first()
+        )
+        session.delete(new_gearbox)
+        session.commit()
+        session.close()
+
 
 class Environment_db:
     class Environment(Base):
@@ -81,11 +95,11 @@ class Environment_db:
 
     def __init__(
         self,
-        environment_name,
-        wind_speed,
-        slope_angel_road,
-        air_density,
-        gravitational_force,
+        environment_name=None,
+        wind_speed=None,
+        slope_angel_road=None,
+        air_density=None,
+        gravitational_force=None,
     ):
         self.environment_name = environment_name
         self.wind_speed = wind_speed
@@ -105,6 +119,16 @@ class Environment_db:
         session.commit()
         session.close()
 
+    def delete_environment(self, environment):
+        new_environment = (
+            session.query(self.Environment)
+            .filter_by(environment_name=environment)
+            .first()
+        )
+        session.delete(new_environment)
+        session.commit()
+        session.close()
+
 
 class Vehicle_db:
     class Vehicle(Base):
@@ -119,12 +143,12 @@ class Vehicle_db:
 
     def __init__(
         self,
-        vehicle_name,
-        vehicle_mass,
-        c_aero,
-        af_projection_area,
-        rolling_resistance,
-        r_dynamic_rolling,
+        vehicle_name=None,
+        vehicle_mass=None,
+        c_aero=None,
+        af_projection_area=None,
+        rolling_resistance=None,
+        r_dynamic_rolling=None,
     ):
         self.vehicle_name = vehicle_name
         self.vehicle_mass = vehicle_mass
@@ -143,6 +167,14 @@ class Vehicle_db:
             r_dynamic_rolling=self.r_dynamic_rolling,
         )
         session.add(new_vehicle)
+        session.commit()
+        session.close()
+
+    def delete_vehicle(self, vehicle):
+        new_vehicle = (
+            session.query(self.Vehicle).filter_by(vehicle_name=vehicle).first()
+        )
+        session.delete(new_vehicle)
         session.commit()
         session.close()
 

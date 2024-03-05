@@ -939,12 +939,12 @@ class Ui_VehicleDynamicsApp(object):
         )
 
 
-if __name__ == "__main__":
-    import sys
+# if __name__ == "__main__":
+#     import sys
 
-    app = QtWidgets.QApplication(sys.argv)
-    VehicleDynamicsApp = QtWidgets.QMainWindow()
-    ui = Ui_VehicleDynamicsApp()
-    ui.setupUi(VehicleDynamicsApp)
-    VehicleDynamicsApp.show()
-    sys.exit(app.exec())
+#     app = QtWidgets.QApplication(sys.argv)
+#     VehicleDynamicsApp = QtWidgets.QMainWindow()
+#     ui = Ui_VehicleDynamicsApp()
+#     ui.setupUi(VehicleDynamicsApp)
+#     VehicleDynamicsApp.show()
+#     sys.exit(app.exec())
