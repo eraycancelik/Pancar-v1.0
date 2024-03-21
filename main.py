@@ -1,6 +1,6 @@
+# Bismillahirrahmanirrahim
 from PyQt6 import QtCore, QtGui, QtWidgets
 from package.ui import mainWindow
-# Bismillah
 if __name__ == "__main__":
     import sys
 
