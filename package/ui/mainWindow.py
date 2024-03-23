@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from . import main_rc
+from .rc import main_rc
 
 class Ui_VehicleDynamicsApp(object):
     def setupUi(self, VehicleDynamicsApp):
