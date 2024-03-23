@@ -11,7 +11,6 @@ if __name__ == "__main__":
     ui.setupUi(VehicleDynamicsApp)
     VehicleDynamicsApp.show()
 
-
 #     ui.enginev_vehiclev.setStyleSheet(
 #         """
 #     QPushButton{

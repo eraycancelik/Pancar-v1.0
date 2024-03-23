@@ -41,7 +41,7 @@
    </font>
   </property>
   <property name="contextMenuPolicy">
-   <enum>Qt::PreventContextMenu</enum>
+   <enum>Qt::ContextMenuPolicy::PreventContextMenu</enum>
   </property>
   <property name="acceptDrops">
    <bool>false</bool>
@@ -68,7 +68,7 @@ color:rgb(255,255,255);</string>
    </size>
   </property>
   <property name="tabShape">
-   <enum>QTabWidget::Triangular</enum>
+   <enum>QTabWidget::TabShape::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -275,14 +275,14 @@ background-color: rgb(25,25,25);</string>
                   <property name="font">
                    <font>
                     <family>Segoe UI</family>
-                    <pointsize>-1</pointsize>
+                    <pointsize>8</pointsize>
                     <italic>false</italic>
                     <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);</string>
+                   <string notr="true">color:rgb(255, 255, 255);
+font: 700 8pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="title">
                    <string>Vehicle Information</string>
@@ -398,8 +398,8 @@ background-color: rgb(168, 168, 168);</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);</string>
+                   <string notr="true">color:rgb(255,255,255);
+font: 700 8pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="title">
                    <string>User Information</string>
@@ -627,7 +627,7 @@ color:rgb(210,210,210);</string>
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="layoutDirection">
-                      <enum>Qt::LeftToRight</enum>
+                      <enum>Qt::LayoutDirection::LeftToRight</enum>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{
@@ -1037,268 +1037,57 @@ border: 1px solid rgb(150,150,150);
               <bold>true</bold>
              </font>
             </property>
-            <property name="toolTipDuration">
-             <number>0</number>
-            </property>
             <property name="styleSheet">
              <string notr="true">selection-color: rgb(17, 17, 17);
 font: 700 italic 9pt &quot;Segoe UI&quot;;
 color: #aa0000;
-border-color: rgb(25, 25, 25);</string>
+</string>
             </property>
             <property name="title">
              <string>Performance Graphs</string>
             </property>
             <layout class="QGridLayout" name="gridLayout">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <property name="spacing">
-              <number>0</number>
-             </property>
              <item row="0" column="0">
-              <widget class="QWidget" name="button_holder_2" native="true">
-               <property name="minimumSize">
-                <size>
-                 <width>451</width>
-                 <height>126</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>451</width>
-                 <height>126</height>
-                </size>
-               </property>
-               <property name="toolTipDuration">
+              <layout class="QHBoxLayout" name="button_holder">
+               <property name="topMargin">
                 <number>0</number>
                </property>
-               <property name="autoFillBackground">
-                <bool>false</bool>
+               <property name="bottomMargin">
+                <number>7</number>
                </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(20,20,20);
-border-color: rgb(25, 25, 25);
-font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);</string>
-               </property>
-               <layout class="QHBoxLayout" name="button_holder">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>10</number>
-                </property>
-                <item>
-                 <layout class="QVBoxLayout" name="left_graphs">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <property name="sizeConstraint">
-                   <enum>QLayout::SetMaximumSize</enum>
-                  </property>
-                  <property name="leftMargin">
-                   <number>5</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QPushButton" name="enginev_vehiclev">
-                    <property name="minimumSize">
-                     <size>
-                      <width>180</width>
-                      <height>28</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>180</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-border-radius:2px;
-background-color: rgb(20,20,20);
-cursor:pointer;
-border: 1px solid rgb(168, 168, 168);
-}
-QPushButton:hover {
-color:rgb(9, 9, 9);
-background-color: rgb(168, 168, 168);
-}
-QPushButton:pressed {
-color:rgb(9, 9, 9);
-background-color: rgb(150,150,150);
-border: 1px solid rgb(150,150,150);
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>Engine Speed vs Vehicle Speed</string>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="torque_enginev">
-                    <property name="minimumSize">
-                     <size>
-                      <width>180</width>
-                      <height>28</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>180</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-border-radius:2px;
-font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);
-background-color: rgb(20,20,20);
-cursor:pointer;
-border: 1px solid rgb(168, 168, 168);
-}
-QPushButton:hover {
-color:rgb(9, 9, 9);
-background-color: rgb(168, 168, 168);
-}
-QPushButton:pressed {
-color:rgb(9, 9, 9);
-background-color: rgb(150,150,150);
-border: 1px solid rgb(150,150,150);
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>Torque vs Speed</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="torque_enginev_power">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>180</width>
-                      <height>28</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>180</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton{
-border-radius:2px;
-font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);
-background-color: rgb(20,20,20);
-cursor:pointer;
-border: 1px solid rgb(168, 168, 168);
-}
-QPushButton:hover {
-color:rgb(9, 9, 9);
-background-color: rgb(168, 168, 168);
-}
-QPushButton:pressed {
-color:rgb(9, 9, 9);
-background-color: rgb(150,150,150);
-border: 1px solid rgb(150,150,150);
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>Torque vs Speed vs Power</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QFrame" name="right_graphs_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>260</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>260</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <layout class="QVBoxLayout" name="right_graphs">
-                   <property name="leftMargin">
-                    <number>5</number>
+               <item>
+                <layout class="QVBoxLayout" name="left_graphs">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+                 </property>
+                 <property name="leftMargin">
+                  <number>5</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="enginev_vehiclev">
+                   <property name="minimumSize">
+                    <size>
+                     <width>180</width>
+                     <height>28</height>
+                    </size>
                    </property>
-                   <property name="rightMargin">
-                    <number>9</number>
+                   <property name="maximumSize">
+                    <size>
+                     <width>180</width>
+                     <height>20</height>
+                    </size>
                    </property>
-                   <item>
-                    <widget class="QPushButton" name="tractiveF_vehiclev">
-                     <property name="minimumSize">
-                      <size>
-                       <width>250</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>250</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="cursor">
-                      <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 border-radius:2px;
-font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);
+color:rgb(230,230,230);
+font: 9pt &quot;Gill Sans MT&quot;;
 background-color: rgb(20,20,20);
 cursor:pointer;
 border: 1px solid rgb(168, 168, 168);
@@ -1312,34 +1101,40 @@ color:rgb(9, 9, 9);
 background-color: rgb(150,150,150);
 border: 1px solid rgb(150,150,150);
 }</string>
-                     </property>
-                     <property name="text">
-                      <string>Tractive Effort (without res.) vs Vehicle Speed</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="tractiveFnet_vehiclev">
-                     <property name="minimumSize">
-                      <size>
-                       <width>250</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>250</width>
-                       <height>28</height>
-                      </size>
-                     </property>
-                     <property name="cursor">
-                      <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{
+                   </property>
+                   <property name="text">
+                    <string>Engine Speed vs Vehicle Speed</string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>16</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="torque_enginev">
+                   <property name="minimumSize">
+                    <size>
+                     <width>180</width>
+                     <height>28</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>180</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
 border-radius:2px;
-font: 700 11px &quot;Segoe UI&quot;;
-color:rgb(210,210,210);
+color:rgb(230,230,230);
+font: 9pt &quot;Gill Sans MT&quot;;
 background-color: rgb(20,20,20);
 cursor:pointer;
 border: 1px solid rgb(168, 168, 168);
@@ -1353,17 +1148,148 @@ color:rgb(9, 9, 9);
 background-color: rgb(150,150,150);
 border: 1px solid rgb(150,150,150);
 }</string>
-                     </property>
-                     <property name="text">
-                      <string>Tractive Effort vs Vehicle Speed</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
+                   </property>
+                   <property name="text">
+                    <string>Torque vs Speed</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="torque_enginev_power">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>180</width>
+                     <height>28</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>180</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+border-radius:2px;
+color:rgb(230,230,230);
+font: 9pt &quot;Gill Sans MT&quot;;
+background-color: rgb(20,20,20);
+cursor:pointer;
+border: 1px solid rgb(168, 168, 168);
+}
+QPushButton:hover {
+color:rgb(9, 9, 9);
+background-color: rgb(168, 168, 168);
+}
+QPushButton:pressed {
+color:rgb(9, 9, 9);
+background-color: rgb(150,150,150);
+border: 1px solid rgb(150,150,150);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Torque vs Speed vs Power</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="right_graphs">
+                 <property name="leftMargin">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="tractiveF_vehiclev">
+                   <property name="minimumSize">
+                    <size>
+                     <width>230</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>210</width>
+                     <height>28</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+border-radius:2px;
+color:rgb(230,230,230);
+font: 9pt &quot;Gill Sans MT&quot;;
+background-color: rgb(20,20,20);
+cursor:pointer;
+border: 1px solid rgb(168, 168, 168);
+}
+QPushButton:hover {
+color:rgb(9, 9, 9);
+background-color: rgb(168, 168, 168);
+}
+QPushButton:pressed {
+color:rgb(9, 9, 9);
+background-color: rgb(150,150,150);
+border: 1px solid rgb(150,150,150);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Tractive Effort (without res.) vs Vehicle Speed</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="tractiveFnet_vehiclev">
+                   <property name="minimumSize">
+                    <size>
+                     <width>230</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>205</width>
+                     <height>28</height>
+                    </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+border-radius:2px;
+color:rgb(230,230,230);
+font: 9pt &quot;Gill Sans MT&quot;;
+background-color: rgb(20,20,20);
+cursor:pointer;
+border: 1px solid rgb(168, 168, 168);
+}
+QPushButton:hover {
+color:rgb(9, 9, 9);
+background-color: rgb(168, 168, 168);
+}
+QPushButton:pressed {
+color:rgb(9, 9, 9);
+background-color: rgb(150,150,150);
+border: 1px solid rgb(150,150,150);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Tractive Effort vs Vehicle Speed</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
              </item>
             </layout>
            </widget>
@@ -1382,7 +1308,7 @@ border: 1px solid rgb(150,150,150);
      <x>0</x>
      <y>0</y>
      <width>890</width>
-     <height>18</height>
+     <height>34</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDosya">
@@ -1487,7 +1413,7 @@ border: 1px solid rgb(150,150,150);
     <string>vehicle</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="gearbox_entry">
@@ -1502,7 +1428,7 @@ border: 1px solid rgb(150,150,150);
     <string>gearbox</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="environment_entry">
@@ -1517,7 +1443,7 @@ border: 1px solid rgb(150,150,150);
     <string>env</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="engine_entry">
@@ -1529,7 +1455,7 @@ border: 1px solid rgb(150,150,150);
     <string>engine</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::NoRole</enum>
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
   <action name="actionDosyaya_Aktar">
