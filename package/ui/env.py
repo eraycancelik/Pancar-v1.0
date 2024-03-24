@@ -7,8 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from rc import widgets_rc
-
+from . import widgets_rc
 class Ui_Cevre(object):
     def setupUi(self, Cevre):
         Cevre.setObjectName("Cevre")

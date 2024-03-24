@@ -1,26 +1,51 @@
 # Bismillahirrahmanirrahim
 from PyQt6 import QtCore, QtGui, QtWidgets
-from ui import mainWindow
+from PyQt6.QtWidgets import QFileDialog
+from ui import mainWindow, env, vehicle, gearbox
+
+class Pancar(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.ui = mainWindow.Ui_VehicleDynamicsApp()
+        self.ui.setupUi(self)
+
+        self.ui.vehicle_entry.triggered.connect(self.openVehicle)
+        self.ui.environment_entry.triggered.connect(self.openEnv)
+        self.ui.gearbox_entry.triggered.connect(self.openGearbox)
+
+
+
+
+    def openGearbox(self):
+        self.window=QtWidgets.QDialog()
+        self.ui=gearbox.Ui_Sanziman()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        print("gearbox done")
+
+    def openVehicle(self):
+        self.window=QtWidgets.QDialog()
+        self.ui=vehicle.Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+    def openEnv(self):
+        self.window=QtWidgets.QDialog()
+        self.ui=env.Ui_Cevre()
+        self.ui.setupUi(self.window)
+        self.window.show()
+        print("environment done")
+
+    
+
 if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("Fusion")
-    VehicleDynamicsApp = QtWidgets.QMainWindow()
-    ui = mainWindow.Ui_VehicleDynamicsApp()
-    ui.setupUi(VehicleDynamicsApp)
-    VehicleDynamicsApp.show()
-
-#     ui.enginev_vehiclev.setStyleSheet(
-#         """
-#     QPushButton{
-#         border-radius:2px;
-#         color:rgb(230,230,230);
-#         font: 9pt "Gill Sans MT";
-#         background-color: rgb(20,20,20);
-#         cursor:pointer;
-#         border: 1px solid rgb(168, 168, 168);
-#     }
-# """
-#     )
+    ana_pencere = Pancar()
+    ana_pencere.show()
     sys.exit(app.exec())
+
