@@ -15,29 +15,50 @@ class Pancar(QtWidgets.QMainWindow):
         self.ui.gearbox_entry.triggered.connect(self.openGearbox)
 
 
-
-
+        
     def openGearbox(self):
-        self.window=QtWidgets.QDialog()
+        self.gearboxWindow=QtWidgets.QDialog()
         self.ui=gearbox.Ui_Sanziman()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        self.ui.setupUi(self.gearboxWindow)
+        self.gearboxWindow.setModal(True)
+        self.gearboxWindow.show()
         print("gearbox done")
+        self.pushButton = self.gearboxWindow.findChild(QtWidgets.QPushButton, "sanziman_kaydet")
+        self.pushButton.clicked.connect(self.onGearClicked)
+
+
 
     def openVehicle(self):
-        self.window=QtWidgets.QDialog()
+        self.vehicleWindow=QtWidgets.QDialog()
         self.ui=vehicle.Ui_Dialog()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        self.ui.setupUi(self.vehicleWindow)
+        self.vehicleWindow.setModal(True)
+        self.vehicleWindow.show()
+        print("vehicle done")
+        self.pushButton = self.vehicleWindow.findChild(QtWidgets.QPushButton, "arac_kaydet")
+        self.pushButton.clicked.connect(self.onVehicleClicked)
 
 
     def openEnv(self):
-        self.window=QtWidgets.QDialog()
+        self.envWindow=QtWidgets.QDialog()
         self.ui=env.Ui_Cevre()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        self.ui.setupUi(self.envWindow)
+        self.envWindow.setModal(True)
+        self.envWindow.show()
         print("environment done")
+        self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
+        self.pushButton.clicked.connect(self.onEnvClicked)
 
+        
+    def onGearClicked(self):
+        self.gearboxWindow.close()
+        print("şanzıman kaydettim")
+    def onVehicleClicked(self):
+        self.vehicleWindow.close()
+        print("araç kaydettim")
+    def onEnvClicked(self):
+        self.envWindow.close()
+        print("çevre kaydettim")
     
 
 if __name__ == "__main__":

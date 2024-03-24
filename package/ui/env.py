@@ -130,11 +130,11 @@ class Ui_Cevre(object):
         self.ortam_kaydet.setText(_translate("Cevre", "KAYDET"))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Cevre = QtWidgets.QDialog()
-    ui = Ui_Cevre()
-    ui.setupUi(Cevre)
-    Cevre.show()
-    sys.exit(app.exec())
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     Cevre = QtWidgets.QDialog()
+#     ui = Ui_Cevre()
+#     ui.setupUi(Cevre)
+#     Cevre.show()
+#     sys.exit(app.exec())

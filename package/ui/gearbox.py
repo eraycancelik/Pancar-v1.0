@@ -122,11 +122,11 @@ class Ui_Sanziman(object):
         self.sanziman_kaydet.setText(_translate("Sanziman", "KAYDET"))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Sanziman = QtWidgets.QDialog()
-    ui = Ui_Sanziman()
-    ui.setupUi(Sanziman)
-    Sanziman.show()
-    sys.exit(app.exec())
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     Sanziman = QtWidgets.QDialog()
+#     ui = Ui_Sanziman()
+#     ui.setupUi(Sanziman)
+#     Sanziman.show()
+#     sys.exit(app.exec())
