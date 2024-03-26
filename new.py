@@ -184,7 +184,8 @@ gearbox_instance = Gearbox_db(
     differential_gear_ratio=2.9,
     powertrain_efficiency=78,
 )
+gearbox_instance.create_gearbox()
 environment_instance.create_environment()
 engine_instance.create_engine()
 vehicle_instance.create_vehicle()
-gearbox_instance.create_gearbox()
+

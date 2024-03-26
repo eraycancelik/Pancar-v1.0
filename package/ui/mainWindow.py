@@ -19,7 +19,7 @@ class Ui_VehicleDynamicsApp(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(VehicleDynamicsApp.sizePolicy().hasHeightForWidth())
         VehicleDynamicsApp.setSizePolicy(sizePolicy)
-        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(890, 617))
+        VehicleDynamicsApp.setMinimumSize(QtCore.QSize(890, 623))
         VehicleDynamicsApp.setMaximumSize(QtCore.QSize(890, 623))
         font = QtGui.QFont()
         font.setFamily("Bahnschrift SemiLight")

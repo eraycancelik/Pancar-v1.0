@@ -2,6 +2,11 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QFileDialog
 from ui import mainWindow, env, vehicle, gearbox
+import sys
+import os
+
+# database.py dosyasının bulunduğu dizini sys.path listesine ekleyin
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
@@ -53,9 +58,11 @@ class Pancar(QtWidgets.QMainWindow):
     def onGearClicked(self):
         self.gearboxWindow.close()
         print("şanzıman kaydettim")
+
     def onVehicleClicked(self):
         self.vehicleWindow.close()
         print("araç kaydettim")
+        
     def onEnvClicked(self):
         self.envWindow.close()
         print("çevre kaydettim")
