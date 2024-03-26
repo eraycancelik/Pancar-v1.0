@@ -1,12 +1,8 @@
 # Bismillahirrahmanirrahim
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QFileDialog
-from ui import mainWindow, env, vehicle, gearbox
-import sys
-import os
-
-# database.py dosyasının bulunduğu dizini sys.path listesine ekleyin
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from package.ui import mainWindow, env, vehicle, gearbox
+from package import database
 
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):

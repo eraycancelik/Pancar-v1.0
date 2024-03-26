@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'main.ui'
+# Form implementation generated from reading ui file 'test.ui'
 #
 # Created by: PyQt6 UI code generator 6.6.1
 #
@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from . import main_rc
+import main_rc
 
 class Ui_VehicleDynamicsApp(object):
     def setupUi(self, VehicleDynamicsApp):
@@ -69,17 +69,17 @@ class Ui_VehicleDynamicsApp(object):
         self.verticalLayout_34.setSpacing(10)
         self.verticalLayout_34.setObjectName("verticalLayout_34")
         self.pancar_image = QtWidgets.QLabel(parent=self.left_side_holder)
-        self.pancar_image.setMinimumSize(QtCore.QSize(411, 301))
-        self.pancar_image.setMaximumSize(QtCore.QSize(411, 301))
+        self.pancar_image.setMinimumSize(QtCore.QSize(411,301))
+        self.pancar_image.setMaximumSize(QtCore.QSize(411,301))
         self.pancar_image.setAutoFillBackground(False)
-        self.pancar_image.setStyleSheet("border:10px solid rgba(250,250,250,.9);")
+        self.pancar_image.setStyleSheet("border:3px solid rgba(50,50,50,.2);")
         self.pancar_image.setText("")
         self.pancar_image.setPixmap(QtGui.QPixmap(":/img/icons/dark-car-from-side-vector-9761198.jpg"))
         self.pancar_image.setScaledContents(True)
         self.pancar_image.setWordWrap(False)
         self.pancar_image.setOpenExternalLinks(False)
         self.pancar_image.setObjectName("pancar_image")
-        self.pancar_image.setStyleSheet("margin:7px;\n""padding-right:1px;\n")
+        self.pancar_image.setStyleSheet("margin:10px;")
         self.verticalLayout_34.addWidget(self.pancar_image)
         self.info_input_area = QtWidgets.QWidget(parent=self.left_side_holder)
         self.info_input_area.setMinimumSize(QtCore.QSize(371, 161))

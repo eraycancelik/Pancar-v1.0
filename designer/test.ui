@@ -22,7 +22,7 @@
   <property name="minimumSize">
    <size>
     <width>890</width>
-    <height>617</height>
+    <height>623</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -202,7 +202,7 @@ background-color: rgb(25,25,25);</string>
                 <bool>false</bool>
                </property>
                <property name="margin">
-                <number>5</number>
+                <number>10</number>
                </property>
                <property name="openExternalLinks">
                 <bool>false</bool>
