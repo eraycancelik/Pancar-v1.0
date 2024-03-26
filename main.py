@@ -2,7 +2,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QFileDialog
 from package.ui import mainWindow, env, vehicle, gearbox
-from package import database
+from database import Environment_db,Gearbox_db,Vehicle_db
 
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
@@ -52,14 +52,38 @@ class Pancar(QtWidgets.QMainWindow):
 
         
     def onGearClicked(self):
+        gearbox_instance = Gearbox_db(
+            gearbox_name="aryonddan geldik ",
+            gear_ratio_list="3.21,2.85,2.5,2.2,1.7,1.4,3.2",
+            differential_gear_ratio=2.9,
+            powertrain_efficiency=78,
+        )
+        gearbox_instance.create_gearbox()
         self.gearboxWindow.close()
         print("şanzıman kaydettim")
 
     def onVehicleClicked(self):
+        vehicle_instance = Vehicle_db(
+            vehicle_name="aryonddan geldik",
+            vehicle_mass=2500.0,
+            c_aero=0.3,
+            af_projection_area=5.0,
+            rolling_resistance=0.01,
+            r_dynamic_rolling=0.02,
+        )
+        vehicle_instance.create_vehicle()
         self.vehicleWindow.close()
         print("araç kaydettim")
         
     def onEnvClicked(self):
+        environment_instance = Environment_db(
+            environment_name="ben de aryonddan geldim",
+            wind_speed=10,
+            slope_angel_road=12,
+            air_density=0.3,
+            gravitational_force=9.8,
+        )
+        environment_instance.create_environment()
         self.envWindow.close()
         print("çevre kaydettim")
     
