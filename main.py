@@ -51,47 +51,47 @@ class Pancar(QtWidgets.QMainWindow):
         print("environment done")
         self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
         self.pushButton.clicked.connect(self.onEnvClicked)
+ 
 
     # def onGearClicked(self):
-    #     sanziman_ismi=self.ui.sanziman_ismi.text()
-    #     vites_oranlari=self.ui.vites_oranlari.text()
-    #     dif_oran=self.ui.dif_oran.text()
-    #     ao_verimi=self.ui.ao_verimi.text()
-    #     gearbox_instance = Gearbox_db(
-    #         gearbox_name=sanziman_ismi,
-    #         gear_ratio_list=vites_oranlari,
-    #         differential_gear_ratio=dif_oran,
-    #         powertrain_efficiency=ao_verimi,
-    #     )
-    #     gearbox_instance.create_gearbox()
-    #     self.gearboxWindow.close()     
+    #     while True:
+    #         sanziman_ismi = self.ui.sanziman_ismi.text()
+    #         vites_oranlari = self.ui.vites_oranlari.text()
+    #         dif_oran = self.ui.dif_oran.text()
+    #         ao_verimi = self.ui.ao_verimi.text()
+    #         try:
+    #             gearbox_instance = Gearbox_db(
+    #                 gearbox_name=sanziman_ismi,
+    #                 gear_ratio_list=vites_oranlari,
+    #                 differential_gear_ratio=dif_oran,
+    #                 powertrain_efficiency=ao_verimi,
+    #             )
+    #             gearbox_instance.create_gearbox()
+    #             self.gearboxWindow.close()
+    #             print("Şanzıman kaydedildi")
+    #             break
+
+    #         except Exception as e:
+    #             print("Hata:", e)
+    #             reply = QMessageBox()
+    #             reply.setText("Eksik veya hatalı bilgi girdiniz")
+    #             reply.setStandardButtons(QMessageBox.StandardButton.Ok)
+    #             print("sorun çıktı")
+    #             pass
 
     def onGearClicked(self):
-        try:
-            sanziman_ismi = self.ui.sanziman_ismi.text()
-            vites_oranlari = self.ui.vites_oranlari.text()
-            dif_oran = self.ui.dif_oran.text()
-            ao_verimi = self.ui.ao_verimi.text()
-
-            gearbox_instance = Gearbox_db(
-                gearbox_name=sanziman_ismi,
-                gear_ratio_list=vites_oranlari,
-                differential_gear_ratio=dif_oran,
-                powertrain_efficiency=ao_verimi,
-            )
-            gearbox_instance.create_gearbox()
-            self.gearboxWindow.close()
-
-            print("Şanzıman kaydedildi")
-        except Exception as e:
-            print("Hata:", e)
-            reply = QMessageBox()
-            reply.setText("Eksik veya hatalı bilgi girdiniz")
-            reply.setStandardButtons(QMessageBox.StandardButton.Ok)
-            x = reply.exec()
-            if x == QMessageBox.StandardButton.Ok:
-                print("OK düğmesine tıklandı")
-        print("şanzıman kaydettim")
+        sanziman_ismi=self.ui.sanziman_ismi.text()
+        vites_oranlari=self.ui.vites_oranlari.text()
+        dif_oran=self.ui.dif_oran.text()
+        ao_verimi=self.ui.ao_verimi.text()
+        gearbox_instance = Gearbox_db(
+            gearbox_name=sanziman_ismi,
+            gear_ratio_list=vites_oranlari,
+            differential_gear_ratio=dif_oran,
+            powertrain_efficiency=ao_verimi,
+        )
+        gearbox_instance.create_gearbox()
+        self.gearboxWindow.close()   
         
     def onVehicleClicked(self):
         arac_ismi=self.ui.arac_ismi.text()
