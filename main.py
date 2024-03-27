@@ -3,19 +3,27 @@ from PyQt6 import QtWidgets
 from package.ui import mainWindow, env, vehicle, gearbox
 from database import Environment_db,Gearbox_db,Vehicle_db
 from utils import is_numeric,is_valid
+
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.ui = mainWindow.Ui_VehicleDynamicsApp()
         self.ui.setupUi(self)
-
+        
+        
+        
+    ################################################################### SIGNALS ###################################################################
         self.ui.vehicle_entry.triggered.connect(self.openVehicle)
         self.ui.environment_entry.triggered.connect(self.openEnv)
         self.ui.gearbox_entry.triggered.connect(self.openGearbox)
+    ###############################################################################################################################################
 
 
-        
+
+
+
+    #################################################################### SLOTS ####################################################################
     def openGearbox(self):
         self.gearboxWindow=QtWidgets.QDialog()
         self.ui=gearbox.Ui_Sanziman()
@@ -50,7 +58,7 @@ class Pancar(QtWidgets.QMainWindow):
         print("environment done")
         self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
         self.pushButton.clicked.connect(self.onEnvClicked)
-############################################################################################  SLOTS ###########################################################################################
+        
     
     def onGearClicked(self):
         sanziman_ismi = self.ui.sanziman_ismi.text()
