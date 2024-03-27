@@ -1,8 +1,8 @@
 # Bismillahirrahmanirrahim
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMessageBox
 from package.ui import mainWindow, env, vehicle, gearbox
 from database import Environment_db,Gearbox_db,Vehicle_db
+from utils import is_numeric,is_valid
 # from PySide6.QtWidgets import QMessageBox
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
@@ -51,48 +51,52 @@ class Pancar(QtWidgets.QMainWindow):
         print("environment done")
         self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
         self.pushButton.clicked.connect(self.onEnvClicked)
- 
-
-    # def onGearClicked(self):
-    #     while True:
-    #         sanziman_ismi = self.ui.sanziman_ismi.text()
-    #         vites_oranlari = self.ui.vites_oranlari.text()
-    #         dif_oran = self.ui.dif_oran.text()
-    #         ao_verimi = self.ui.ao_verimi.text()
-    #         try:
-    #             gearbox_instance = Gearbox_db(
-    #                 gearbox_name=sanziman_ismi,
-    #                 gear_ratio_list=vites_oranlari,
-    #                 differential_gear_ratio=dif_oran,
-    #                 powertrain_efficiency=ao_verimi,
-    #             )
-    #             gearbox_instance.create_gearbox()
-    #             self.gearboxWindow.close()
-    #             print("Şanzıman kaydedildi")
-    #             break
-
-    #         except Exception as e:
-    #             print("Hata:", e)
-    #             reply = QMessageBox()
-    #             reply.setText("Eksik veya hatalı bilgi girdiniz")
-    #             reply.setStandardButtons(QMessageBox.StandardButton.Ok)
-    #             print("sorun çıktı")
-    #             pass
-
+############################################################################################  SIGNALS ###########################################################################################
+    
     def onGearClicked(self):
-        sanziman_ismi=self.ui.sanziman_ismi.text()
-        vites_oranlari=self.ui.vites_oranlari.text()
-        dif_oran=self.ui.dif_oran.text()
-        ao_verimi=self.ui.ao_verimi.text()
-        gearbox_instance = Gearbox_db(
-            gearbox_name=sanziman_ismi,
-            gear_ratio_list=vites_oranlari,
-            differential_gear_ratio=dif_oran,
-            powertrain_efficiency=ao_verimi,
-        )
-        gearbox_instance.create_gearbox()
-        self.gearboxWindow.close()   
+        sanziman_ismi = self.ui.sanziman_ismi.text()
+        vites_oranlari = self.ui.vites_oranlari.text()
+        dif_oran = self.ui.dif_oran.text()
+        ao_verimi = self.ui.ao_verimi.text()
+
+        if not sanziman_ismi or not vites_oranlari or not dif_oran or not ao_verimi:
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "Tüm alanları doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+        elif is_valid(vites_oranlari) and is_numeric(dif_oran) and is_numeric(ao_verimi):
+            gearbox_instance = Gearbox_db(
+                gearbox_name=sanziman_ismi,
+                gear_ratio_list=vites_oranlari,
+                differential_gear_ratio=dif_oran,
+                powertrain_efficiency=ao_verimi,
+            )
+            gearbox_instance.create_gearbox()
+            self.gearboxWindow.close()
+            print("Şanzıman kaydedildi")  
+            msg=QtWidgets.QMessageBox.information(
+                self,
+                "Başarılı",
+                f"{sanziman_ismi} başarıyla kaydedilmiştir   ",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
+            print("araç kaydettim")
         
+        else:
+            msg=QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "İlgili alanları yalnızca sayısal değerlerle doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
+                                  
+
     def onVehicleClicked(self):
         arac_ismi=self.ui.arac_ismi.text()
         arac_kutlesi=self.ui.arac_kutlesi.text()
@@ -100,7 +104,15 @@ class Pancar(QtWidgets.QMainWindow):
         izdusum_alan=self.ui.izdusum_alan.text()
         yuvarlanma_direnc=self.ui.yuvarlanma_direnc.text()
         teker_efektif_r=self.ui.teker_efektif_r.text()
-        vehicle_instance = Vehicle_db(
+        if  not arac_kutlesi or not cf_aero or not izdusum_alan or not yuvarlanma_direnc or not teker_efektif_r:
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "Tüm alanları doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+        elif is_numeric(arac_kutlesi) and is_numeric(cf_aero) and is_numeric(izdusum_alan) and is_numeric(yuvarlanma_direnc) and is_numeric(teker_efektif_r):
+            vehicle_instance = Vehicle_db(
             vehicle_name=arac_ismi,
             vehicle_mass=arac_kutlesi,
             c_aero=cf_aero,
@@ -108,26 +120,70 @@ class Pancar(QtWidgets.QMainWindow):
             rolling_resistance=yuvarlanma_direnc,
             r_dynamic_rolling=teker_efektif_r,
         )
-        vehicle_instance.create_vehicle()
-        self.vehicleWindow.close()
-        print("araç kaydettim")
+            vehicle_instance.create_vehicle()
+            self.vehicleWindow.close()
+            msg=QtWidgets.QMessageBox.information(
+                self,
+                "Başarılı",
+                f"{arac_ismi} aracı başarıyla kaydedilmiştir   ",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
+            print("araç kaydettim")
         
+        else:
+            msg=QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "İlgili alanları yalnızca sayısal değerlerle doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
+
     def onEnvClicked(self):
         cevre_isim=self.ui.cevre_isim.text()
         ruzgar_hizi=self.ui.ruzgar_hizi.text()
         yol_egimi=self.ui.yol_egimi.text()
         hava_yogunlugu=self.ui.hava_yogunlugu.text()
         yercekimi=self.ui.yercekimi.text()
-        environment_instance = Environment_db(
+        if  not cevre_isim or not ruzgar_hizi or not yol_egimi or not hava_yogunlugu or not yercekimi:
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "Tüm alanları doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+        elif is_numeric(ruzgar_hizi) and is_numeric(yol_egimi) and is_numeric(hava_yogunlugu) and is_numeric(yercekimi) :
+            environment_instance = Environment_db(
             environment_name=cevre_isim,
             wind_speed=ruzgar_hizi,
             slope_angel_road=yol_egimi,
             air_density=hava_yogunlugu,
             gravitational_force=yercekimi,
         )
-        environment_instance.create_environment()
-        self.envWindow.close()
-        print("çevre kaydettim")
+            environment_instance.create_environment()
+            self.envWindow.close()
+            msg=QtWidgets.QMessageBox.information(
+                self,
+                "Başarılı",
+                f"{cevre_isim} ortamı başarıyla kaydedilmiştir   ",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
+            print("araç kaydettim")
+        
+        else:
+            msg=QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "İlgili alanları yalnızca sayısal değerlerle doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+            if msg==QtWidgets.QMessageBox.StandardButton.Ok:
+                return
     
 
 if __name__ == "__main__":
