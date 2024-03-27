@@ -1,9 +1,8 @@
 # Bismillahirrahmanirrahim
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtWidgets
 from package.ui import mainWindow, env, vehicle, gearbox
 from database import Environment_db,Gearbox_db,Vehicle_db
 from utils import is_numeric,is_valid
-# from PySide6.QtWidgets import QMessageBox
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -51,7 +50,7 @@ class Pancar(QtWidgets.QMainWindow):
         print("environment done")
         self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
         self.pushButton.clicked.connect(self.onEnvClicked)
-############################################################################################  SIGNALS ###########################################################################################
+############################################################################################  SLOTS ###########################################################################################
     
     def onGearClicked(self):
         sanziman_ismi = self.ui.sanziman_ismi.text()
