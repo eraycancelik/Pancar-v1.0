@@ -11,12 +11,20 @@ class Pancar(QtWidgets.QMainWindow):
         self.ui = mainWindow.Ui_VehicleDynamicsApp()
         self.ui.setupUi(self)
         
-        
+    
+        self.engine_tork_speed_list=self.ui.engine_torque_speed_list
+        self.gearbox_list=self.ui.gearbox_list
+        self.vehicle_list=self.ui.vehicle_list
+        self.environment_list=self.ui.environment_list
+    
         
     ################################################################### SIGNALS ###################################################################
         self.ui.vehicle_entry.triggered.connect(self.openVehicle)
         self.ui.environment_entry.triggered.connect(self.openEnv)
         self.ui.gearbox_entry.triggered.connect(self.openGearbox)
+        self.ui.gearbox_list_delete_button.clicked.connect(self.delete_gearbox)
+        self.ui.env_list_delete_button.clicked.connect(self.delete_environment)
+        self.ui.vehicle_list_delete_button.clicked.connect(self.delete_vehicle)
     ###############################################################################################################################################
 
 
@@ -24,6 +32,68 @@ class Pancar(QtWidgets.QMainWindow):
 
 
     #################################################################### SLOTS ####################################################################
+    def update_gearbox_list(self):
+        gearbox_db = Gearbox_db()
+        query_result = gearbox_db.get_gearboxes()
+        self.gearbox_list.clear()
+        if query_result:
+            for gearbox in query_result:
+                item_text = gearbox.gearbox_name
+                list_item = QtWidgets.QListWidgetItem(item_text)
+                self.gearbox_list.addItem(list_item)
+        else:
+            self.gearbox_list.addItem("Şanzıman kaydı bulunamadı.")
+            
+    def update_environment_list(self):
+        environments_db=Environment_db()
+        query_result = environments_db.get_environments()
+        self.environment_list.clear()
+        if query_result:
+            for item in query_result:
+                item_text = item.environment_name
+                list_item = QtWidgets.QListWidgetItem(item_text)
+                self.environment_list.addItem(list_item)
+        else:
+            self.environment_list.addItem("Ortam kaydı bulunamadı.")
+
+    def update_vehicle_list(self):
+        vehicle_db=Vehicle_db()
+        query_result = vehicle_db.get_vehicles()
+        self.vehicle_list.clear()
+        if query_result:
+            for item in query_result:
+                item_text = item.vehicle_name
+                list_item = QtWidgets.QListWidgetItem(item_text)
+                self.vehicle_list.addItem(list_item)
+        else:
+            self.vehicle_list.addItem("Ortam kaydı bulunamadı.")
+    
+    def delete_vehicle(self):
+        current_item = self.vehicle_list.currentItem()
+        query=Vehicle_db()
+        if current_item is not None:
+            query.delete_vehicle(vehicle=current_item.text())
+            print(current_item.text())
+        else:
+            print("Herhangi bir öğe seçilmedi.")
+        self.update_vehicle_list()
+        
+    def delete_environment(self):
+        current_item = self.environment_list.currentItem()
+        if current_item is not None:
+            print(current_item.text())
+        else:
+            print("Herhangi bir öğe seçilmedi.")
+        self.update_environment_list()
+        
+    def delete_gearbox(self):
+        current_item = self.gearbox_list.currentItem()
+        if current_item is not None:
+            print(current_item.text())
+        else:
+            print("Herhangi bir öğe seçilmedi.")
+        self.update_gearbox_list()
+            
     def openGearbox(self):
         self.gearboxWindow=QtWidgets.QDialog()
         self.ui=gearbox.Ui_Sanziman()
@@ -200,5 +270,8 @@ if __name__ == "__main__":
     app.setStyle("Fusion")
     ana_pencere = Pancar()
     ana_pencere.show()
+    ana_pencere.update_gearbox_list()
+    ana_pencere.update_environment_list()
+    ana_pencere.update_vehicle_list()
     sys.exit(app.exec())
 

@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, load_only
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
@@ -40,7 +40,9 @@ class Engine_db:
         session.delete(new_engine)
         session.commit()
         session.close()
-
+    def get_engines(self):
+        engine_list=session.query(self.Engine.engine_name)
+        return engine_list
 
 class Gearbox_db:
     class Gearbox(Base):
@@ -81,7 +83,12 @@ class Gearbox_db:
         session.delete(new_gearbox)
         session.commit()
         session.close()
-
+        
+    def get_gearboxes(self):
+        gearbox_list=session.query(self.Gearbox.gearbox_name)
+        # query = session.query(self.Gearbox).filter_by(gearbox_name=self.gearbox_name).first()
+        return gearbox_list
+        
 
 class Environment_db:
     class Environment(Base):
@@ -128,7 +135,10 @@ class Environment_db:
         session.delete(new_environment)
         session.commit()
         session.close()
-
+        
+    def get_environments(self):
+        environment_list=session.query(self.Environment.environment_name)
+        return environment_list
 
 class Vehicle_db:
     class Vehicle(Base):
@@ -177,7 +187,10 @@ class Vehicle_db:
         session.delete(new_vehicle)
         session.commit()
         session.close()
-
+    
+    def get_vehicles(self):
+        environment_list=session.query(self.Vehicle.vehicle_name)
+        return environment_list
 
 # Create the table in the database
 Base.metadata.create_all(engine)
