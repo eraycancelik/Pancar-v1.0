@@ -727,6 +727,7 @@ class Ui_VehicleDynamicsApp(object):
         self.toolBar.addAction(self.environment_entry)
         self.toolBar.addSeparator()
 
+        self.retranslateUi(VehicleDynamicsApp)
         
         self.actionKapat.triggered.connect(VehicleDynamicsApp.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(VehicleDynamicsApp)
