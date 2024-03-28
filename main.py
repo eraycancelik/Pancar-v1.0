@@ -1,9 +1,9 @@
 # Bismillahirrahmanirrahim
 from PyQt6 import QtWidgets
-from package.ui import mainWindow, env, vehicle, gearbox
+from package.ui import mainWindow, engine, env, vehicle, gearbox
 from database import Environment_db,Gearbox_db,Vehicle_db
 from utils import is_numeric,is_valid
-
+import os
 class Pancar(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -22,6 +22,7 @@ class Pancar(QtWidgets.QMainWindow):
         self.ui.vehicle_entry.triggered.connect(self.openVehicle)
         self.ui.environment_entry.triggered.connect(self.openEnv)
         self.ui.gearbox_entry.triggered.connect(self.openGearbox)
+        self.ui.engine_entry.triggered.connect(self.openEngine)
         self.ui.gearbox_list_delete_button.clicked.connect(self.delete_gearbox)
         self.ui.env_list_delete_button.clicked.connect(self.delete_environment)
         self.ui.vehicle_list_delete_button.clicked.connect(self.delete_vehicle)
@@ -102,7 +103,34 @@ class Pancar(QtWidgets.QMainWindow):
             print("Herhangi bir öğe seçilmedi.")
         self.update_vehicle_list()
 
-            
+    def openEngine(self):
+        self.engineWindow=QtWidgets.QDialog()
+        self.ui=engine.Ui_Dialog()
+        self.ui.setupUi(self.engineWindow)
+        self.engineWindow.setModal(True)
+        self.engineWindow.show()
+        print("engine done")
+        self.pushButton = self.engineWindow.findChild(QtWidgets.QPushButton, "kaydet")
+        self.secPushButton = self.engineWindow.findChild(QtWidgets.QPushButton, "sec")
+        self.secPushButton.clicked.connect(self.file)
+        self.pushButton.clicked.connect(self.onEngineClicked)
+        print("engine clicked")
+        
+    def onEngineClicked(self):
+        print()
+    
+    def file(self):
+        file_filter="Excel File (*.xlsx *.xls);"
+        response=QtWidgets.QFileDialog.getOpenFileName(
+            parent=self,
+            caption="Motor hız-tork tablosu",
+            directory=os.getcwd(),
+            filter=file_filter,
+            initialFilter="Excel File (*.xlsx *.xls)"
+        )
+        path=str(response[0])
+        self.ui.label_3.setText(path)
+        
     def openGearbox(self):
         self.gearboxWindow=QtWidgets.QDialog()
         self.ui=gearbox.Ui_Sanziman()
@@ -110,11 +138,8 @@ class Pancar(QtWidgets.QMainWindow):
         self.gearboxWindow.setModal(True)
         self.gearboxWindow.show()
         print("gearbox done")
-        # self.sanziman_ismi=self.gearboxWindow.sanziman_ismi.text()
-        sanziman_ismi=self.ui.sanziman_ismi.text()
         self.pushButton = self.gearboxWindow.findChild(QtWidgets.QPushButton, "sanziman_kaydet")
         self.pushButton.clicked.connect(self.onGearClicked)
-
 
 
     def openVehicle(self):
@@ -286,4 +311,3 @@ if __name__ == "__main__":
     ana_pencere.update_environment_list()
     ana_pencere.update_vehicle_list()
     sys.exit(app.exec())
-

@@ -8,7 +8,7 @@ from calculations import (
     tractive_f,
     final_force,
 )
-
+import pprint
 arac_tork_name = "2jz_tork"
 arac_rpm_name = "2jz_rpm"
 
@@ -42,7 +42,8 @@ arac = Motor(
 
 
 def main():
-    # print(powerInKw(engine_db["vr_38_dett_tork"], engine_db["vr_38_dett_rpm"]))
+    print(engine_db["vr_38_dett_tork"][0], len(engine_db["vr_38_dett_rpm"]))
+    pprint.pprint(engine_db["vr_38_dett_tork"][0])
     tork_times_gear_list = arac.torque_rev_per_gear(
         tork_list=engine_db[arac_tork_name], overall_gear_ratio=arac.gearBox
     )
