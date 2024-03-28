@@ -1,10 +1,10 @@
-from speed_torque import Speed_rpm
+from speed_torque import Speed_Torque
 from pprint import pprint
-from ..database import Engine_db
+
 gtr = "gtr.xlsx"
 ferrari = "ferrari.xlsx"
 test = "test.xlsx"
-engine = Speed_rpm(file=ferrari)
+engine = Speed_Torque(file=ferrari)
 
 if __name__ == "__main__":
     try:

@@ -1,13 +1,14 @@
 # Bismillahirrahmanirrahim
 from PyQt6 import QtWidgets
 from package.ui import mainWindow, engine, env, vehicle, gearbox
-from database import Environment_db,Gearbox_db,Vehicle_db
+from package.speed_torque import Speed_Torque
+from database import Engine_db, Environment_db,Gearbox_db,Vehicle_db
 from utils import is_numeric,is_valid
 import os
 class Pancar(QtWidgets.QMainWindow):
-    def __init__(self):
+    def __init__(self,path=""):
         super().__init__()
-
+        self.path=path
         self.ui = mainWindow.Ui_VehicleDynamicsApp()
         self.ui.setupUi(self)
         
@@ -113,23 +114,11 @@ class Pancar(QtWidgets.QMainWindow):
         self.pushButton = self.engineWindow.findChild(QtWidgets.QPushButton, "kaydet")
         self.secPushButton = self.engineWindow.findChild(QtWidgets.QPushButton, "sec")
         self.secPushButton.clicked.connect(self.file)
+        if self.path=="":
+            self.pushButton.setEnabled(False)
         self.pushButton.clicked.connect(self.onEngineClicked)
         print("engine clicked")
-        
-    def onEngineClicked(self):
-        print()
     
-    def file(self):
-        file_filter="Excel File (*.xlsx *.xls);"
-        response=QtWidgets.QFileDialog.getOpenFileName(
-            parent=self,
-            caption="Motor hız-tork tablosu",
-            directory=os.getcwd(),
-            filter=file_filter,
-            initialFilter="Excel File (*.xlsx *.xls)"
-        )
-        path=str(response[0])
-        self.ui.label_3.setText(path)
         
     def openGearbox(self):
         self.gearboxWindow=QtWidgets.QDialog()
@@ -163,7 +152,47 @@ class Pancar(QtWidgets.QMainWindow):
         self.pushButton = self.envWindow.findChild(QtWidgets.QPushButton, "ortam_kaydet")
         self.pushButton.clicked.connect(self.onEnvClicked)
         
+    def file(self):
+        file_filter="Excel File (*.xlsx *.xls);"
+        response=QtWidgets.QFileDialog.getOpenFileName(
+            parent=self,
+            caption="Motor hız-tork tablosu",
+            directory=os.getcwd(),
+            filter=file_filter,
+            initialFilter="Excel File (*.xlsx *.xls)"
+        )
+        path=str(response[0])
+        self.ui.label_3.setText(path)
+        self.path=path
+        if self.path!="":
+            self.pushButton.setEnabled(True)
     
+    def onEngineClicked(self):
+        dosya_yolu=self.path
+        engine=Speed_Torque(file=dosya_yolu)
+        speed=engine.out()[0]
+        torque=engine.out()[1]
+        speed_string=' '.join(str(e) for e in speed)
+        torque_string=' '.join(str(e) for e in torque)
+        motor_ismi=self.ui.motor_isim.text()
+        if not motor_ismi or not speed_string or not torque_string:
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Hata",
+                "Tüm alanları doldurunuz!",
+                QtWidgets.QMessageBox.StandardButton.Ok
+            )
+        else:
+            engine_instance=Engine_db(
+                engine_name=motor_ismi,
+                speed=speed_string,
+                torque=torque_string
+            )
+            engine_instance.create_engine()
+            self.engineWindow.close()
+            
+            print(speed_string,torque_string,motor_ismi)
+            
     def onGearClicked(self):
         sanziman_ismi = self.ui.sanziman_ismi.text()
         vites_oranlari = self.ui.vites_oranlari.text()
