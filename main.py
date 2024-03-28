@@ -32,6 +32,9 @@ class Pancar(QtWidgets.QMainWindow):
 
 
     #################################################################### SLOTS ####################################################################
+    
+    
+                                                        ##### LISTE ISLEMLERI #####
     def update_gearbox_list(self):
         gearbox_db = Gearbox_db()
         query_result = gearbox_db.get_gearboxes()
@@ -68,31 +71,37 @@ class Pancar(QtWidgets.QMainWindow):
         else:
             self.vehicle_list.addItem("Ortam kaydı bulunamadı.")
     
+        
+    def delete_gearbox(self):
+        current_item = self.gearbox_list.currentItem()
+        query=Gearbox_db()
+        if current_item is not None:
+            query.delete_gearbox(gearbox=current_item.text())
+            print(f"{current_item.text()} is deleted")
+        else:
+            print("Herhangi bir öğe seçilmedi.")
+        self.update_gearbox_list()
+        
+    def delete_environment(self):
+        current_item = self.environment_list.currentItem()
+        query=Environment_db()
+        if current_item is not None:
+            query.delete_environment(environment=current_item.text())
+            print(f"{current_item.text()} is deleted")
+        else:
+            print("Herhangi bir öğe seçilmedi.")
+        self.update_environment_list()
+        
     def delete_vehicle(self):
         current_item = self.vehicle_list.currentItem()
         query=Vehicle_db()
         if current_item is not None:
             query.delete_vehicle(vehicle=current_item.text())
-            print(current_item.text())
+            print(f"{current_item.text()} is deleted")
         else:
             print("Herhangi bir öğe seçilmedi.")
         self.update_vehicle_list()
-        
-    def delete_environment(self):
-        current_item = self.environment_list.currentItem()
-        if current_item is not None:
-            print(current_item.text())
-        else:
-            print("Herhangi bir öğe seçilmedi.")
-        self.update_environment_list()
-        
-    def delete_gearbox(self):
-        current_item = self.gearbox_list.currentItem()
-        if current_item is not None:
-            print(current_item.text())
-        else:
-            print("Herhangi bir öğe seçilmedi.")
-        self.update_gearbox_list()
+
             
     def openGearbox(self):
         self.gearboxWindow=QtWidgets.QDialog()
@@ -152,6 +161,7 @@ class Pancar(QtWidgets.QMainWindow):
             )
             gearbox_instance.create_gearbox()
             self.gearboxWindow.close()
+            self.update_gearbox_list()
             print("Şanzıman kaydedildi")  
             msg=QtWidgets.QMessageBox.information(
                 self,
@@ -199,6 +209,7 @@ class Pancar(QtWidgets.QMainWindow):
         )
             vehicle_instance.create_vehicle()
             self.vehicleWindow.close()
+            self.update_vehicle_list()
             msg=QtWidgets.QMessageBox.information(
                 self,
                 "Başarılı",
@@ -242,6 +253,7 @@ class Pancar(QtWidgets.QMainWindow):
         )
             environment_instance.create_environment()
             self.envWindow.close()
+            self.update_environment_list()
             msg=QtWidgets.QMessageBox.information(
                 self,
                 "Başarılı",
